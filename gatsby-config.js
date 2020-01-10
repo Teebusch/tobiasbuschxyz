@@ -1,33 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Tobias Busch`,
+    name: `Tobias Busch`,
+    siteUrl: `https://tobiasbusch.xyz`,
+    description: `Personal website of Tobias Busch.`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
+      heading: `Hi, I'm Tobias! I write about R and data visualization.`,
       maxWidth: 652,
     },
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/narative`,
+        url: `https://twitter.com/drtobilotti`,
       },
       {
         name: `github`,
-        url: `https://github.com/narative`,
+        url: `https://github.com/Teebusch`,
       },
       {
         name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        url: `https://instagram.com/tobilotti`,
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
+        url: `https://www.linkedin.com/tobiasbusch/`,
       },
     ],
   },
@@ -38,7 +34,7 @@ module.exports = {
         contentPosts: "content/posts",
         contentAuthors: "content/authors",
         basePath: "/",
-        authorsPage: true,
+        authorsPage: false,
         sources: {
           local: true,
           // contentful: true,

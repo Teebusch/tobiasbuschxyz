@@ -1,24 +1,13 @@
-- name: Dennis Brotzky
+- name: Tobias Busch
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    Hearing researcher by day, creative coder by night. 
+    Living in Oslo, organizing social events for introverts & teaching 
+    scientists to code. I like pomelo. 
+    I never tweet <a href="twitter.com/sotobilotti">@drtobilotti</a>
+  avatar: ./avatars/avatar.jpg
   social:
-    - url: https://unsplash.com
-    - url: https://stackoverflow.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
+    - url: https://github.com/Teebusch
+    - url: https://instagram.com/tobilotti
+    - url: https://linkedin.com/tobiasbusch
   featured: true
-
-- name: Thiago Costa
-  bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/thiago-costa.png
-  social:
-    - url: https://unsplash.com
-    - url: https://stackoverflow.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
+  slug: tbusch
