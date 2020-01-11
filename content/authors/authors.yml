@@ -1,8 +1,8 @@
 ---
 - name: Tobias Busch
   bio: "Hearing researcher by day, creative coder by night. \nLiving in Oslo, organizing
-    social events for introverts & teaching \nscientists to code. I like pomelo. \nI
-    never tweet <a href=\"twitter.com/sotobilotti\">@drtobilotti</a>\n"
+    social events for introverts & teaching \nscientists to code. Pomelo is a superior
+    fruit. \nI never tweet <a href=\"twitter.com/sotobilotti\">@drtobilotti</a>\n"
   avatar: "./avatars/avatar.jpg"
   social:
   - url: https://github.com/Teebusch
