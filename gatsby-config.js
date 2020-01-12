@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         name: `github`,
-        url: `https://github.com/Teebusch`,
+        url: `https://github.com/teebusch`,
       },
       {
         name: `instagram`,
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/tobiasbusch/`,
+        url: `https://www.linkedin.com/tobias-busch/`,
       },
     ],
   },
