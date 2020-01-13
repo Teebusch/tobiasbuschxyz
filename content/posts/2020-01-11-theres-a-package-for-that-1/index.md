@@ -15,7 +15,7 @@ slug: theres-an-r-package-for-that-ep1-making-noise
 
 One of R's strengths is the vast amount of 3rd party code--packages--that can expand its functionality. There are over 15.000 packages on [CRAN](https://cran.r-project.org/), R's beloved package repository, and many more packages can be found on GitHub, Bioconductor, Neuroconductor, etc.
 
-This series of blog post is meant to unearth some of the lesser known gems: Packages that solve a very specific, perhaps obscure, problem. Packages that will make your life easier or make you scratch your head in wonder. Packages that are useful and packages that are just weird. We will have a look around the ginormous toolshed that is the R package ecosystem. Each episode will highlight another package, the power of R, and its amazing community.
+This series of blog post will unearth some of the lesser known gems: Packages that solve a very specific, perhaps obscure, problem. Packages that will make your life easier or make you scratch your head in wonder. Packages that are useful and packages that are just weird. We will have a look around the ginormous toolshed that is the R package ecosystem. Each episode will highlight another package, the power of R, and its amazing community.
 
 ***
 
