@@ -1,5 +1,5 @@
 ---
-title: "There's an R package for that! | Ep. 1: Making noise with beepr and BRRR"
+title: 'An R package for everything | Ep. 1: Making noise with beepr and BRRR'
 author: Tobias Busch
 date: 2020-01-11
 output: html_document
@@ -7,19 +7,19 @@ tags: there-is-an-R-package-for-that, R
 hero: "./images/hero.jpg"
 excerpt: Some R packages will make your computer scream. Quite literally.
 slug: theres-an-r-package-for-that-ep1-making-noise
----
 
+---
 ## There's an R package for that!
 
 One of R's strengths is the vast amount of 3rd party code--packages--that can expand its functionality. There are over 15.000 packages on [CRAN](https://cran.r-project.org/), R's beloved package repository, and many more packages can be found on GitHub, Bioconductor, Neuroconductor, etc.
 
 This series of blog post is meant to unearth some of the lesser known gems: Packages that solve a very specific, perhaps obscure, problem. Packages that will make your life easier or make you scratch your head in wonder. Packages that are useful and packages that are just weird. We will have a look around the ginormous toolshed that is the R package ecosystem. Each episode will highlight another package, the power of R, and its amazing community.
 
-----
+***
 
 ## Make R scream with "beepr"
 
-In this very first installment of "There's an R package for that!", we will look at packages that let R play notification sounds. This way R can notify you when your calculations are finished or have crashed, so you don't have to continuosly check on it and can instead ~~browse Reddit~~ read research papers.  
+Today we will look at packages that let R play notification sounds. This way R can notify you when your calculations are finished or have crashed, so you don't have to continuously check on it and can instead ~~browse Reddit~~ read research papers.
 
 The `beepr` package is a straightforward way to make R play a sound. Here's how to install the package and play a sound:
 
@@ -68,7 +68,7 @@ while(TRUE) {
 }
 ```
 
-Of course, the `sleep()` function will block your R session. To run the code as a background process instead, you can use [RStudio's jobs API](https://blog.rstudio.com/2019/03/14/rstudio-1-2-jobs/). Just run `rstudioapi::jobRunScript('./pomodoro-timer.R')` or source the `pomodoro-timer.R` script using the 'Source as local job' button on the top right of the source panel. 
+Of course, the `sleep()` function will block your R session. To run the code as a background process instead, you can use [RStudio's jobs API](https://blog.rstudio.com/2019/03/14/rstudio-1-2-jobs/). Just run `rstudioapi::jobRunScript('./pomodoro-timer.R')` or source the `pomodoro-timer.R` script using the 'Source as local job' button in the top right corner of the source panel.
 
 The job should appear in RStudio's jobs panel, run in the background and remind you when it's time to take a break.
 
@@ -76,12 +76,9 @@ The job should appear in RStudio's jobs panel, run in the background and remind 
 
 ![the Jobs panel in RStudio](./images/screenshot-jobspanel.png "the Jobs panel in RStudio")
 
-
-
-
 You can learn more about `beepr` [here](https://github.com/rasmusab/beepr).
 
-## Play rapper adlibs with "BRRR"
+## Play rapper ad-libs with "BRRR"
 
 The `BRRR` package's main (and only?) function `skrrrahh()` plays sound bites from different rappers. There are 52 different ad-libs for all sorts of situations. To use the package run this:
 
@@ -93,7 +90,7 @@ library("BRRR")
 skrrrahh("kendrick")
 ```
 
-To have your favorite artists cheer you on while you are coding, run the following code as an RStudio background job like we did above:
+To have your favourite artists cheer you on while you are coding, run the following code as an RStudio background job like we did above:
 
 ```python
 while (TRUE) {
@@ -106,16 +103,15 @@ You can learn more about `BRRR` [here](https://github.com/brooke-watson/BRRR).
 
 ## Look ma, no hands!
 
-If you are on a Mac you can make R rap without any packages at all. Simply use the operating system's built-in text-to-speech engine: 
+If you are on a Mac you can make R rap without any packages at all. Simply use the operating system's built-in text-to-speech engine:
 
 ```python
-system("say And if you don\\'t know, now you know! Ah!") 
+system("say And if you don\\'t know, now you know!") 
 # note the double-backslash needed to escaope the special character
 ```
 
------
+***
 
 Has Biggie become an integral part of your analysis workflow or do you know other packages that can make R sing, dance, or swallow a sword? Tell me about it! [@drtobilotti](https://twitter.com/drtobilotti)
-
 
 _Photo by Clem Onojeghuo on Unsplash_
