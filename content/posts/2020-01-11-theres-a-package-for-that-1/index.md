@@ -3,7 +3,9 @@ title: 'An R package for everything | Ep. 1: Making noise with beepr and BRRR'
 author: Tobias Busch
 date: 2020-01-11
 output: html_document
-tags: there-is-an-R-package-for-that, R
+tags:
+- R-for-everything
+- R
 hero: "./images/hero.jpg"
 excerpt: Some R packages will make your computer scream. Quite literally.
 slug: theres-an-r-package-for-that-ep1-making-noise
