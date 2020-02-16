@@ -125,7 +125,7 @@ p +
 
 ![a ggplot figure with bracketed axes](./images/fig5_bracketed.png)
 
-The bracketing helps to emphasise that the variable on the x-axis (continent) is a discrete variable, and to visually separate the jittered point belonging to each continent.
+The bracketing helps to emphasise that the variable on the x-axis (continent) is a discrete variable, and to visually separate the jittered points belonging to each continent.
 
 You can learn more about `lemon` [here](https://cran.r-project.org/web/packages/lemon/vignettes/capped-axes.html).
 For an alternative solution using ggplot-trickery, see [this Stackoverflow answer.](https://stackoverflow.com/a/25327902)
@@ -158,7 +158,7 @@ p
 This is bad! The outlier makes it very difficult to tell the difference in life expectancy between all the other data points.
 In a case like this, a log-transformation can often help to bring the data points closer together, but here it would not help much. A log-transformation would also make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_. 
 
-In this case it is better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them. 
+Instead, it might be better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them. 
 
 To skip a range of values on the y-axis you can use the `gg.gap` package, which you can find on CRAN and [here](https://github.com/ChrisLou-bioinfo/gg.gap). It works like this:
 
@@ -188,7 +188,7 @@ p %>%
 ![a ggplot figure with a gap on the y axis](./images/fig7_discontinuousgggap.png)
 
 To me, `gg.gap` feels a bit fiddly and the documentation is not very clear. 
-If you don't mind using base R graphics instead (thus, loosing the power of the grammar of graphics), the `plotrix` package might offer a better alternative:
+If you don't mind using base R graphics instead (thus, losing the power of the grammar of graphics), the `plotrix` package might offer a better alternative:
 
 ```python
 if(!require(plotrix)) install.packages("plotrix")
