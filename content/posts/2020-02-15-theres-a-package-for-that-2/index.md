@@ -18,15 +18,15 @@ There are over 15.000 packages on [CRAN](https://cran.r-project.org/), the R pac
 
 ***
 
-## Mind the Gap! 
+## Mind the Gap!
 
 If you want to add a gap to a figure's axis, you are probably looking for one of three things:
 
-- **Capped axes** -- Look good when using continuous variables that don't start at 0.
-- **Bracketed axes** -- Look nice when plotting discrete variables.
-- **Discontinuous axes** -- Good for showing outliers without squishing all other data.
+* **Capped axes** -- Look good when using continuous variables that don't start at 0.
+* **Bracketed axes** -- Look nice when plotting discrete variables.
+* **Discontinuous axes** -- Good for showing outliers without squishing all other data.
 
-## Capped axis 
+## Capped axis
 
 Here's a simple plot, using ggplot and `theme_classic()`
 
@@ -81,8 +81,7 @@ p +
 
 ![a ggplot figure with capped axes and custom tick marks](./images/fig3_cappedcustom.png)
 
-**Note:** You have to get rid of the panel border and axis lines to see the effect.
-If you are not using `theme_classic()`, This can be achieved with something like...
+**Note:** You have to get rid of the panel border and axis lines to see the effect. If you are not using `theme_classic()`  can be achieved with something like...
 
 ```python
 p + 
@@ -119,7 +118,7 @@ p +
   lemon::coord_flex_cart(bottom = brackets_horisontal(), left = capped_vertical('both')) +
   theme(
     axis.text.x  = element_text(vjust = -1),  # the labels are a bit too close to the brackets
-    axis.title.x = element_text(vjust = -2, )
+    axis.title.x = element_text(vjust = -2)
   )
 ```
 
@@ -156,9 +155,9 @@ p
 ![a ggplot figure with an extreme outlier on the y axis](./images/fig6_normal.png)
 
 This is bad! The outlier makes it very difficult to tell the difference in life expectancy between all the other data points.
-In a case like this, a log-transformation can often help to bring the data points closer together, but here it would not help much. A log-transformation would also make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_. 
+In a case like this, a log-transformation can often help to bring the data points closer together, but here it would not help much. A log-transformation would also make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_.
 
-Instead, it might be better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them. 
+Instead, it might be better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them.
 
 To skip a range of values on the y-axis you can use the `gg.gap` package, which you can find on CRAN and [here](https://github.com/ChrisLou-bioinfo/gg.gap). It works like this:
 
@@ -168,8 +167,7 @@ library(gg.gap)
 
 # we need to tweak the theme a bit to make it look nice
 # and we need to do it before we pass the plot to gg.gap
-p <- p + 
-  #theme_grey() +
+p <- p +
   theme(
     panel.background = element_rect(fill = "white"), 
     panel.grid = element_blank(),
@@ -187,7 +185,7 @@ p %>%
 
 ![a ggplot figure with a gap on the y axis](./images/fig7_discontinuousgggap.png)
 
-To me, `gg.gap` feels a bit fiddly and the documentation is not very clear. 
+To me, `gg.gap` feels a bit fiddly and the documentation is not very clear.
 If you don't mind using base R graphics instead (thus, losing the power of the grammar of graphics), the `plotrix` package might offer a better alternative:
 
 ```python
