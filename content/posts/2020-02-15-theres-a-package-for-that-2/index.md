@@ -81,7 +81,7 @@ p +
 
 ![a ggplot figure with capped axes and custom tick marks](./images/fig3_cappedcustom.png)
 
-**Note:** You have to get rid of the panel border and axis lines to see the effect. If you are not using `theme_classic()`  can be achieved with something like...
+**Note:** You have to get rid of the panel border and axis lines to see the effect. If you are not using `theme_classic()` this can be achieved by adjusting the theme of the plot like this...
 
 ```python
 p + 
@@ -131,9 +131,7 @@ For an alternative solution using ggplot-trickery, see [this Stackoverflow answe
 
 ## Discontinuous axes
 
-So far we have only removed parts of the axis _lines_, leaving the data points where they are in the figure.
-Sometimes we'd like to skip sections of the coordinate system, for example to show outliers without having to squish together all other data points.
-To demonstrate this, I will add an outlier to the data:
+So far we have only removed parts of the axis _lines_, leaving the data points where they are in the figure. Sometimes we'd like to skip sections of the coordinate system, for example to show outliers without having to squish together all other data points. To demonstrate this, I will add an outlier to the data:
 
 ```python
 df <- gapminder %>% 
@@ -154,8 +152,7 @@ p
 
 ![a ggplot figure with an extreme outlier on the y axis](./images/fig6_normal.png)
 
-This is bad! The outlier makes it very difficult to tell the difference in life expectancy between all the other data points.
-In a case like this, a log-transformation can often help to bring the data points closer together, but here it would not help much. A log-transformation would also make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_.
+This is bad! The outlier makes it very difficult to tell the difference in life expectancy between all the other data points. In a case like this, a log-transformation can often help to stretch out the data points with lower values while bringing those with higher values closer to them. Here a log-transformation would not help much and it would make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_.
 
 Instead, it might be better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them.
 
