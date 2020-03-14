@@ -210,5 +210,3 @@ plotrix::axis.break(4, 87.2, breakcol="black", style="slash")
 ***
 
 Has this blog post helped you? Do you know other packages that remove things which don't spark joy? Tell me about it! [@drtobilotti](https://twitter.com/drtobilotti)
-
-_Photo by Michael Dziedzic on Unsplash_

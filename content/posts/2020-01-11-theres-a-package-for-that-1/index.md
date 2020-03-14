@@ -6,7 +6,7 @@ output: html_document
 tags:
 - R-for-everything
 - R
-hero: "./images/hero.jpg"
+hero: "./images/hero.png"
 excerpt: Some R packages will make your computer scream. Quite literally.
 slug: theres-an-r-package-for-that-ep1-making-noise
 
