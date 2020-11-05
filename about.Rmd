@@ -1,0 +1,17 @@
+---
+title: "About this blog"
+description: |
+  Some additional details about the blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+bio: "Hearing researcher by day, creative coder by night. \nLiving in Oslo, 
+organizing social events for introverts & teaching \nscientists to code. 
+Pomelo is a super fruit. I never tweet <a href=\"https://twitter.com/drtobilotti\">@drtobilotti</a>\n"
+url: https://github.com/teebusch
+url: https://instagram.com/tobilotti
+url: https://linkedin.com/tobias-busch

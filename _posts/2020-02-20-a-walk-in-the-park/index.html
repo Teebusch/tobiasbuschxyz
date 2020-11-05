@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #545454; font-weight: bold; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #a1024a; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007faa; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #008000; } /* Char */
+code span.cn { color: #d91e18; } /* Constant */
+code span.co { color: #545454; } /* Comment */
+code span.cv { color: #545454; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #aa5d00; } /* DataType */
+code span.dv { color: #a1024a; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #a1024a; } /* Float */
+code span.fu { color: #4254a7; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #545454; font-weight: bold; } /* Information */
+code span.kw { color: #007faa; font-weight: bold; } /* Keyword */
+code span.op { color: #696969; } /* Operator */
+code span.ot { color: #007faa; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #008000; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #008000; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #008000; } /* VerbatimString */
+code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>A Walk in the Park</title>
+
+  <meta property="description" itemprop="description" content="The beginning of my D3 journey was a walk in the park."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-02-22"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-02-22"/>
+  <meta name="article:author" content="Tobias Busch"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="A Walk in the Park"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="The beginning of my D3 journey was a walk in the park."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="A Walk in the Park"/>
+  <meta property="twitter:description" content="The beginning of my D3 journey was a walk in the park."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output","categories","preview","excerpt","description","slug"]}},"value":[{"type":"character","attributes":{},"value":["A Walk in the Park"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Tobias Busch"]}]}]},{"type":"character","attributes":{},"value":["2020-02-22"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["D3.js","R","datavis"]},{"type":"character","attributes":{},"value":["./images/screenshot.png"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["The beginning of my D3 journey was a walk in the park.\n"]},{"type":"character","attributes":{},"value":["a-walk-in-the-park"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["images/checkinplot.png","images/checkinplotsm.png","images/dataprep1.png","images/designsketch1.jpeg","images/designsketch2.jpeg","images/finalscreenshot.png","images/finalscreenshot2.png","images/finalscreenshot3.png","images/hero.png","images/parkmap.jpg","images/pathssm.png","images/rsketch1.png","images/rsketch2.png","images/rsketch3.png","images/rsketch4.png","images/rsketch5.png","images/rsketch6.png","images/rsketch7.png","images/screenshot.png","images/vissketch1.jpeg","images/vissketch10.jpeg","images/vissketch11.jpeg","images/vissketch12.jpeg","images/vissketch13.jpeg","images/vissketch14.jpeg","images/vissketch15.png","images/vissketch16.png","images/vissketch17.png","images/vissketch18.png","images/vissketch19.png","images/vissketch2.jpeg","images/vissketch20.png","images/vissketch21.png","images/vissketch22.png","images/vissketch3.jpeg","images/vissketch4.jpeg","images/vissketch5.jpeg","images/vissketch6.jpeg","images/vissketch7.jpeg","images/vissketch8.jpeg","images/vissketch9.jpeg","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.5/header-attrs.js","index_files/jquery-1.11.3/jquery.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: hidden;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="index_files/header-attrs-2.5/header-attrs.js"></script>
+  <script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="index_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="index_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="index_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="index_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"A Walk in the Park","description":"The beginning of my D3 journey was a walk in the park.","authors":[{"author":"Tobias Busch","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-02-22T00:00:00.000+01:00","citationText":"Busch, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>A Walk in the Park</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">D3.js</div>
+<div class="dt=tag">R</div>
+<div class="dt=tag">datavis</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>The beginning of my D3 journey was a walk in the park.</p></p>
+</div>
+
+<div class="d-byline">
+  Tobias Busch  
+  
+<br/>2020-02-22
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#a-first-look-at-the-data">A First Look at the Data</a>
+<ul>
+<li><a href="#duration-of-visit">Duration of Visit</a></li>
+<li><a href="#movements-and-check-ins">Movements and Check-Ins</a></li>
+<li><a href="#differences-between-days">Differences between days</a></li>
+<li><a href="#paths">Paths</a></li>
+</ul></li>
+<li><a href="#understanding-the-data-structure---who-when-where-what">Understanding the Data Structure - Who, When, Where, What?</a>
+<ul>
+<li><a href="#locations-and-attractions">Locations and Attractions</a></li>
+<li><a href="#visitors">Visitors</a></li>
+</ul></li>
+<li><a href="#visualization-sketches">Visualization Sketches</a></li>
+<li><a href="#final-visualization-sketches">Final Visualization Sketches</a>
+<ul>
+<li><a href="#crooked-paths-visualizing-visitors-paths">Crooked Paths — Visualizing Visitor’s paths</a></li>
+<li><a href="#flagging-mutations-in-visitor-dna">Flagging “Mutations” in visitor DNA</a></li>
+<li><a href="#visualizing-visitors-at-rides-overview">Visualizing Visitors at Rides: Overview</a></li>
+<li><a href="#visualizing-visitors-at-rides-details">Visualizing Visitors at Rides: Details</a></li>
+</ul></li>
+<li><a href="#preparing-data-for-the-visualization">Preparing Data for the Visualization</a></li>
+<li><a href="#sketching-in-r-crooked-paths">Sketching in R – Crooked Paths</a></li>
+<li><a href="#sketching-in-r-coming-and-going">Sketching in R – Coming and Going</a>
+<ul>
+<li><a href="#adding-interactivity">Adding Interactivity</a></li>
+</ul></li>
+<li><a href="#final-visualization-with-d3.js">Final Visualization with D3.js</a>
+<ul>
+<li><a href="#concept">Concept</a></li>
+<li><a href="#implementation">Implementation</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<p>In 2018, I took a semester-long course on data visualization at KU Leuven. It was a course from the statistics Master’s program, taught by Prof. Jan Aerts. The class was project-based and had less than a dozen students and 3 TAs, so it was an intense and hands-on learning experience. We worked with a fairly large data set–more than 1 GB of data–of people’s movements around an amusement park and were free to find our own approach to visualising it.</p>
+<aside>
+<h4 id="project">Project</h4>
+Try the final interactive visualization at <a href="https://teebusch.github.io/park-vis">teebusch.github.io/park-vis</a> (please allow some time for it to load)
+</aside>
+<p>In class we used <a href="https://p5js.org/">P5.js</a> - a Java Script implementation of the <a href="https://processing.org/">Processing</a> language. However, after some sketching and data exploration with R and some prototyping with Shiny, I decided to use <a href="https://d3js.org/">D3.js</a> to build the final visualisation. It was a great opportunity to take a deep dive into D3, and I learned quite a lot.</p>
+<p>For the course I documented my design process as a series of posts on Medium. I’ve copied them all here and you can find them below.</p>
+<h2 id="a-first-look-at-the-data">A First Look at the Data</h2>
+<p>The assignments revolve around a data set of visitor movements in a theme park. In this (simulated) theme park, each visitor’s position is captured once a second. When they check in at a location, this is captured, too. We work with the visitor data from one weekend–Friday to Sunday. There are over 26 million records in the data set, from 3500 (Friday) to 7500 (Sunday) unique visitors per day. There is also evidence of a mysterious crime in the data, but that’s for another blog post. The first assignment is to explore the data. Here are some of my insights and thoughts on the data…</p>
+<h3 id="duration-of-visit">Duration of Visit</h3>
+<p>Most visitors arrived before 10am and <strong>75% of visitors stayed for at least 12 hours.</strong> The longest stay was just short of 15 hours (which is almost the maximum, given the opening hours, 8am to 11.30pm). The shortest stay was just 10 minutes long (what happened there?).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/parkmap.jpg" alt="The (simulated) theme park. Check-in locations are marked by numbers."  />
+<p class="caption">
+Figure 1: The (simulated) theme park. Check-in locations are marked by numbers.
+</p>
+</div>
+</div>
+<h3 id="movements-and-check-ins">Movements and Check-Ins</h3>
+<p>The park has a number of locations at which visitors can <em>“check in”</em>. Many of these are rides (such as rollercoasters). <strong>An average visitor checks in at around 20 locations.</strong> It seems that on the day where the least visitors came to the park, Friday, the average number of check-ins was higher (23) than on Saturday and Sunday (17 and 18, respectively). There are a few visitors with just a single check-in–their entry into the park?–and two with 61 check-ins. The average number of <em>unique</em> locations a visitor checks in at is 12–15. Once they check-in at a location, visitors stay for around 7 minutes (Median).</p>
+<p>We can plot the <strong>accumulated time</strong> that visitors have spent in each 5x5 meter grid of the park (“movements”) and at each check-in location.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/checkinplot.png" alt="Accumulated time spent on each 5x5 meter grid (square-root). Circles indicate check-in locations, diameter indicates time spent in the location." width="1500" />
+<p class="caption">
+Figure 2: Accumulated time spent on each 5x5 meter grid (square-root). Circles indicate check-in locations, diameter indicates time spent in the location.
+</p>
+</div>
+</div>
+<p>Although the plot does not show whether there are more people in a given area, or people just stay longer, it’s obvious that <strong>not all areas are equally frequented.</strong> This may be the case because there is a a foodcourt, a resting space, or a particularly fun-to-watch attraction. Visitors don’t necessarily spend more time in a spot because they want to. Congested areas are just harder to pass through.</p>
+<p>Looking at this I wonder…</p>
+<ul>
+<li>Do people move slower on days/times when there are more visitors? Do they move slower when there are many other people close-by?</li>
+<li>Are there areas where movements are particularly slow? If so, why?</li>
+</ul>
+<p>It’s also clear that <strong>some check-in locations are more popular than others.</strong> Some interesting question come to mind:</p>
+<ul>
+<li>Which locations are the most popular? At different times of the day? At different “phases” of the visit? For shorter / longer visits?</li>
+<li>Which rides are taken multiple times by the same person? Are they taken consecutively? Throughout the day?</li>
+<li>Do people take longer at a check-in location depending on the number of visitors in the park / the number of visitors that are close-by? That is, can we see waiting times change?</li>
+<li>Are there locations that people skip more than others, i.e. where people walk by without checking in? Does the <em>“skip-rate”</em> depend on the number of visitors queueing for it, the time of the day…?</li>
+<li>How many people does each location “service” per unit time?</li>
+<li>At which rate does each visitor check in to rides. Do people get slower/faster over time? Do some people have a higher frequency than others?</li>
+</ul>
+<h3 id="differences-between-days">Differences between days</h3>
+<p>We can also plot the <strong>most frequented areas and check-in locations for each day and time.</strong> I don’t see any striking irregularities on any of the days. This is a bit unexpected, since there was a major incident in the park on one of the days, and I would expect this to be visible. I may be looking at the data in the wrong way.</p>
+<div class="layout-chunk" data-layout="l-screen">
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/checkinplotsm.png" alt="Top 30% of areas and locations (circles) per day (top to bottom: Friday, Saturday, Sunday) and two-hour interval (left to right: 8–10am, 10am–12pm, …)." width="2000" />
+<p class="caption">
+Figure 3: Top 30% of areas and locations (circles) per day (top to bottom: Friday, Saturday, Sunday) and two-hour interval (left to right: 8–10am, 10am–12pm, …).
+</p>
+</div>
+</div>
+<h3 id="paths">Paths</h3>
+<p>If we plot some individual visitors’ path through the park we can see that there are typical patterns as well as individual differences.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/pathssm.png" alt="Paths of 30 random visitors through the park. Shade of blue indicate time of the day, pink dots indicate check-ins." width="1000" />
+<p class="caption">
+Figure 4: Paths of 30 random visitors through the park. Shade of blue indicate time of the day, pink dots indicate check-ins.
+</p>
+</div>
+</div>
+<p>Again, some questions come to mind:</p>
+<ul>
+<li>What does the typical <em>“flow”</em> of visitors through the park look like? Do people just go through the rides in the order they encounter them or do they<br />
+take more complex paths? Are there particularly common sequences?</li>
+<li>Does it make sense to model check-in sequences as Markov chains, or check-in<br />
+frequencies as Poisson distributed, so we can identify unusual behaviour?</li>
+<li>Are there peak times throughout the day? At particular rides?</li>
+<li>Can we identify people who move in groups? Does group size affect behaviour (number of rides taken, duration of pauses, length of stay)? If groups split, why, for how long, and where do they reunite?</li>
+<li>Are there clusters regarding which areas of the park people go to? E.g. rollercoaster-maniacs, water-freaks, foodcourt-chillers, families hanging out in kiddie-land all day…?</li>
+<li>Can we see people resting? When and where do visitors rest?</li>
+</ul>
+<p>This is a simulated data set, so not all of these questions may have interesting answers, but it will still be fun to investigate them further. I’m running of time, so I will have to leave them open for now.</p>
+<h2 id="understanding-the-data-structure---who-when-where-what">Understanding the Data Structure - Who, When, Where, What?</h2>
+<p>The next step towards visualizing the park data is to specify the <strong>“data structure”</strong>. In the <em>Methodical Exploration of Design Space (MEDS)</em> framework, this exercise helps to expand the “Design space that you know” to cover more of the “Design space that exists”.</p>
+<p>In computer science different data structures lend themselves to different operations: Elements in an array can be accessed directly via their index, but removing a random element is computationally expensive. Elements of a linked list can be removed easily, but to find the <em>n</em>th element, one must visit all <em>n-1</em> preceeding elements. Although the two concepts are not identical, identifying the data structure of the park data set should in a similar way help to reveal units of observation, relationships, derivative variables, and possible operations.</p>
+<p>My starting point for figuring out the data structure was to think about the available observational units and their features. Then I sketched the data structure. I tried to incorporate the aspects I had thought about, while keeping an open mind for connections my brain would make as I was drawing. Here’s what came out of that:</p>
+<h3 id="locations-and-attractions">Locations and Attractions</h3>
+<p>Locations are small parts of the park (5x5m tiles). Each tile has up to eight neighbouring tiles. Not all xy-coordinates represent accessible tiles, but all accessible tiles are connected. One can <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#/">find</a> the shortest <strong>path</strong> between any two locations (finding the longest path <a href="https://en.wikipedia.org/wiki/Longest_path_problem">is not as easy</a>). Moving from one location to another will take some amount of time and likely depends on factors such as the number of visitors in the location, the direction one is heading, the speed at which one is moving…). There will be some number of visitors at a location at any time.</p>
+<p>Some locations are <strong>attractions</strong> that visitors check into, spend time at, and then leave again. Attractions belong to certain <strong>categories</strong> (water slides, thrill rides, stage shows…), that will make them more or less attractive to different visitors. Even within a category their popularity may vary. At a given moment in time, there will be some number of visitors checked in at an attraction.</p>
+<p><strong>Using an attraction</strong> will normally take a more or less constant amount of time. However, attractions can only serve a certain number of visitors per unit time. If that number is exceeded, visitors will have to queue, i.e. spend more time “checked-in”, or even wait outside, not checked in.</p>
+<p>Attractions may be <strong>closed down</strong> and inaccessible to visitors during certain times, like when there is no show at a stage (…or after a horrendous crime!). Since attractions are also locations, the same concepts of distance and “moving between them” apply. Attractions can be more or less similar in terms of location, opening hours, time it takes to use them, category, and popularity.</p>
+<p>Notably, there could be locations where people do not have to check-in but which they still seek out intentionally and for longer times, such as restrooms and food courts.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/designsketch1.jpeg" alt="An early design sketch"  />
+<p class="caption">
+Figure 5: An early design sketch
+</p>
+</div>
+</div>
+<h3 id="visitors">Visitors</h3>
+<p>Visitors enter the park, spend some amount of time there, then leave again. During their visit they move between locations more or less quickly, and check-in at any number of attractions (possibly multiple times) in a self-determined order. They will sometimes <strong>pass by</strong> certain attractions without checking in. The attractions they visit (or not visit) and the paths they take may be more or less similar, and can help identify different <strong>types of visitors.</strong> Visitors will often arrive and move in <strong>groups,</strong> that split and reunite, and they may return on multiple days (although I’m not sure if that would actually be tracked). They may spend some time neither moving nor checked-in anywhere (i.e. resting).</p>
+<p>For visitors it makes sense to look for patterns related to their <strong>v</strong>isiting time** in addition to clock time. That is, how much time has passed since they entered the park. For example, visitors could be getting slower and less active towards the end of their visit, or build the courage to try out the more daring rides.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/designsketch2.jpeg" alt="An early design sketch"  />
+<p class="caption">
+Figure 6: An early design sketch
+</p>
+</div>
+</div>
+<h2 id="visualization-sketches">Visualization Sketches</h2>
+<p>The next step to visualizing the park data is to make some sketches of possible visualizations. The point is to do a lot of them, fast, and without being too critical (at least for now). I found it quite difficult to move from idea to idea quickly. Mike Bostock’s talk on <a href="https://www.youtube.com/watch?v=fThhbt23SGM">design as a search problem</a> was mentioned in the class — I’m definitely more of a <em>depth-first</em> searcher by nature. I see the point of being more <em>breadth-first</em>, though, and it’s fun to try to push myself into that direction (albeit not yet very succesfully).</p>
+<p>I didn’t bother to sketch any of the more obvious visualizations (e.g. bar plots of visitor numbers…) because I find the less simple visualizations more intriguing and I really hope to do something unusual for this course. This could be a mistake, because sometimes the more interesting ideas are easier to get to if you approach them in little steps. This is something I noticed when doing this exercise, and it was also mentioned in the course and in Bostock’s talk, I believe. Then again, there is only so much time I can spare.</p>
+<p>I also didn’t bother with sketching maps, because I have already visualized the maps for the first blog post and I don’t really want to make a “geographical” visualization for the project. I find the exact location more of a nuisance variable that adds noise to the truly interesting information. I’d rather “abstract it away” somehow, and I explored some ways to do this (e.g. by using “transitional probabilities” between locations).</p>
+<p>Anyways, enough talk. Here are my sketches:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<img src="images/vissketch1.jpeg" alt="This was more of a reminder of what the data structure could look like than a visualization sketch."  />
+<p class="caption">
+Figure 7: This was more of a reminder of what the data structure could look like than a visualization sketch.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-8"></span>
+<img src="images/vissketch2.jpeg" alt="Some simple plots that show the average hourly visitor numbers (or some other attraction-related statistic of choice) for all attractions in the park, color-coding different areas. I'm surely using too many circles in all my sketches. It looks nicer, but a bar plot would likely be better in many cases."  />
+<p class="caption">
+Figure 8: Some simple plots that show the average hourly visitor numbers (or some other attraction-related statistic of choice) for all attractions in the park, color-coding different areas. I’m surely using too many circles in all my sketches. It looks nicer, but a bar plot would likely be better in many cases.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<img src="images/vissketch3.jpeg" alt="**Top left:** for all attractions, which other attractions did the visitors go to? **Top right:** I was trying to wrap my head around the three different ways that visitors interact with attractions in the park. Not really a visualization sketch. **Bottom:** For each attraction, how many people passed by, checked in, never went there?"  />
+<p class="caption">
+Figure 9: <strong>Top left:</strong> for all attractions, which other attractions did the visitors go to? <strong>Top right:</strong> I was trying to wrap my head around the three different ways that visitors interact with attractions in the park. Not really a visualization sketch. <strong>Bottom:</strong> For each attraction, how many people passed by, checked in, never went there?
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/vissketch4.jpeg" alt="**Left (orange):** can we show a visitors path through the park and contrast it against other wisitors paths? **Right:** I realized that for any two visitors check-in/no-check-in profile, we can define the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance). This means we can find identical profiles, profiles with 1 (2, 3, ... n) differences."  />
+<p class="caption">
+Figure 10: <strong>Left (orange):</strong> can we show a visitors path through the park and contrast it against other wisitors paths? <strong>Right:</strong> I realized that for any two visitors check-in/no-check-in profile, we can define the <a href="https://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a>. This means we can find identical profiles, profiles with 1 (2, 3, … n) differences.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="images/vissketch5.jpeg" alt="Here I'm mostly expanding on the idea with the Hamming distance. Can we show the way that other almost identical visitors are different. Might be a good way to detect unusual patterns."  />
+<p class="caption">
+Figure 11: Here I’m mostly expanding on the idea with the Hamming distance. Can we show the way that other almost identical visitors are different. Might be a good way to detect unusual patterns.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<img src="images/vissketch6.jpeg" alt="Between any two check-in locations there is a transitional probability (and for longer sequences of check-in locations we could define the n-gram probability using Markov chains). Can we use this to find people who take very uncommon paths through the park?"  />
+<p class="caption">
+Figure 12: Between any two check-in locations there is a transitional probability (and for longer sequences of check-in locations we could define the n-gram probability using Markov chains). Can we use this to find people who take very uncommon paths through the park?
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<img src="images/vissketch7.jpeg" alt="I was trying to find a way to show when people check into a location, how many check in, and for how long they stay. I first tried some fancy glyphs (the angular and toilet brush shaped things). But in the end I found the scatter plot with bars (bottom right) the clearest way to do it."  />
+<p class="caption">
+Figure 13: I was trying to find a way to show when people check into a location, how many check in, and for how long they stay. I first tried some fancy glyphs (the angular and toilet brush shaped things). But in the end I found the scatter plot with bars (bottom right) the clearest way to do it.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<img src="images/vissketch8.jpeg" alt="**Top:** This is similar to some of the previous sketches. we can show how many people travel between any two locations, in which direction, and how long they take (relative to each other). **Bottom right:** The line shows the path between two locations. On the way there may be other locations (smaller black bars). The size of these show how many (proportion) of the people who went from A to B stopped at that inbetween location. Instead of circles little squares / bars could work well for this. Showing the path (line)."  />
+<p class="caption">
+Figure 14: <strong>Top:</strong> This is similar to some of the previous sketches. we can show how many people travel between any two locations, in which direction, and how long they take (relative to each other). <strong>Bottom right:</strong> The line shows the path between two locations. On the way there may be other locations (smaller black bars). The size of these show how many (proportion) of the people who went from A to B stopped at that inbetween location. Instead of circles little squares / bars could work well for this. Showing the path (line).
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-15"></span>
+<img src="images/vissketch9.jpeg" alt="Most of this is similar to the bottom right one above. There is a reference location (marked with 100%). We want to know which other locations the visitors of this reference attraction have visited (or not visited!). The idea is similar to Amazon's 'Customers who bought this also bought...', but it's also showin you how many of them did so."  />
+<p class="caption">
+Figure 15: Most of this is similar to the bottom right one above. There is a reference location (marked with 100%). We want to know which other locations the visitors of this reference attraction have visited (or not visited!). The idea is similar to Amazon’s ‘Customers who bought this also bought…’, but it’s also showin you how many of them did so.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-16"></span>
+<img src="images/vissketch10.jpeg" alt="Here I played with the idea of river plots (I believe that's what they are called). They show the flow of visitors to and from the reference location. You can see which attractions they come from, and where they go afterwards. We could plot just the previous and next steps of their journey (top right), or multiple steps (top left)."  />
+<p class="caption">
+Figure 16: Here I played with the idea of river plots (I believe that’s what they are called). They show the flow of visitors to and from the reference location. You can see which attractions they come from, and where they go afterwards. We could plot just the previous and next steps of their journey (top right), or multiple steps (top left).
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-17"></span>
+<img src="images/vissketch11.jpeg" alt="**Left:** continuation of above. **Right:** Maybe someone can explain to me what I was trying to do here?"  />
+<p class="caption">
+Figure 17: <strong>Left:</strong> continuation of above. <strong>Right:</strong> Maybe someone can explain to me what I was trying to do here?
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-18"></span>
+<img src="images/vissketch12.jpeg" alt="These are mostly variations on ideas I've already sketched elsewhere."  />
+<p class="caption">
+Figure 18: These are mostly variations on ideas I’ve already sketched elsewhere.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<img src="images/vissketch13.jpeg" alt="I was trying to show where in the park visitors are, and how that changes throughout the day. I am a bit fond of the 'solar system' idea in the bottom left. It's a circular bar plot, where each circle is an attraction and the bars show the number of visitors around the clock. The larger a circle, the more visitors in total."  />
+<p class="caption">
+Figure 19: I was trying to show where in the park visitors are, and how that changes throughout the day. I am a bit fond of the ‘solar system’ idea in the bottom left. It’s a circular bar plot, where each circle is an attraction and the bars show the number of visitors around the clock. The larger a circle, the more visitors in total.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-20"></span>
+<img src="images/vissketch14.jpeg" alt="The **top left** shows a visitors' path from location to location. the horizontal distance is the time they traveled, the vertical distance is the distance thy traveled. Both could be normalized to the expected (e.g. average) time/distance for traveling between the two locations. The **bottom** one is similar to the area plot in the previous sketch."  />
+<p class="caption">
+Figure 20: The <strong>top left</strong> shows a visitors’ path from location to location. the horizontal distance is the time they traveled, the vertical distance is the distance thy traveled. Both could be normalized to the expected (e.g. average) time/distance for traveling between the two locations. The <strong>bottom</strong> one is similar to the area plot in the previous sketch.
+</p>
+</div>
+</div>
+<h2 id="final-visualization-sketches">Final Visualization Sketches</h2>
+<p>This week’s assignement for the visualization course was to make a final round of paper sketches.</p>
+<h3 id="crooked-paths-visualizing-visitors-paths">Crooked Paths — Visualizing Visitor’s paths</h3>
+<p>The idea is to show individual visitors’ paths in a way that makes unusual paths easy to spot (i.e. making it a relatively simple “perceptual task”). I thought that transitional probabilities could be the key to such a visualization. <strong>Transitional probabilities</strong> can be assigned to the the transition between any two check-in locations, based on the number of visitors checking in at them in that order, <em>p(B|A)</em>, relative to those who instead go to another location, <em>p(not B|A)</em>. By translating the probability of transitions between check-ins into angles, unlikely paths will appear crooked.</p>
+<p>Paths can be sorted according to their crookedness, too. Other types of clustering can be used, as well, e.g. based on Hamming distance (see below). Clusters could also be shown separately, and transitional probabilities could be calculated per cluster rather than overall.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<img src="images/vissketch15.png" alt="Hovering should highligh an individual path. When a path is selected, additional detail / plots for this visitor can be displayed (not shown)." width="1688" />
+<p class="caption">
+Figure 21: Hovering should highligh an individual path. When a path is selected, additional detail / plots for this visitor can be displayed (not shown).
+</p>
+</div>
+</div>
+<p>Instead of length of all paths being equal, one could encode other information in the length, such as the time it took to travel between the location or the distance traveled. Alternatively, keeping each individual check-in segment at the same length, people who have more checkins will stand out more. Filtering (or highlighting) by length is also an option and could be realized with simple mouse interactions (e.g. horizontal position of the mouse filters paths of certain lenghts).</p>
+<p>Alternatively, probability of transitions could be encoded in the width of the line, as shown below. This might have the advantage that paths will not overlap. However, I have a feeling that the option above is visually more appealing, and I like the analogy with <em>“crooked paths”.</em></p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/vissketch16.png" width="1685" /></p>
+</div>
+<p>The idea could be extended using the probabilities of longer chains, i.e. n-grams / Markov chains, rather than simple transitional probabilites between two locations (i.e. <em>1</em>-grams). For a first atempt, this seems unnecessary.</p>
+<h3 id="flagging-mutations-in-visitor-dna">Flagging “Mutations” in visitor DNA</h3>
+<p>As shown in a previous blog post, we can divide a visitors path into visited and unvisited locations — basically a vector of 0’s and 1’s. For each visitor we can then find visitors who have the same vector <em>except</em> for one location (a <strong>Hamming distance</strong> of 1). This information can be used to see with regards to which locations a visitors path stands out from the rest.</p>
+<p>The Hamming distance can also be used for clustering visitors, which could be useful to add some order / filtering to the plots (including the rooked paths plot above).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-23"></span>
+<img src="images/vissketch17.png" alt="Instead of highlighting 'unusual' check-in locations, one could just color code the number of check-ins at that location. Some visitors may stand out quite a bit if we do that." width="1202" />
+<p class="caption">
+Figure 22: Instead of highlighting ‘unusual’ check-in locations, one could just color code the number of check-ins at that location. Some visitors may stand out quite a bit if we do that.
+</p>
+</div>
+</div>
+<h3 id="visualizing-visitors-at-rides-overview">Visualizing Visitors at Rides: Overview</h3>
+<p>The main goal of visualizing rides is to detect (unusual) patterns of visitors coming and going.</p>
+<p>One useful plot would be some sort of overview of all locations over time. I don’t like to show the locations and paths on a map, because their exact geographic location seems irrelevant, and maps leave a lot of unused negative space. Instead I was thinking of arranging them as tiles (see below), rougly sorted by proximity. Then changes in time can be visualized as sort of a heatmap.</p>
+<p>The paths between locations can be summarized as tiles as well, because we always know where people are coming from and where they are heading to, i.e. which path they are on.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/vissketch18.png" width="1305" /></p>
+</div>
+<p>Instead of using a grid, one could lay out the locations/paths in a slightly less rigid way that still reflects geographial proximity or some other kind of similarity. This allows other ways of encoding information besides hue/saturation:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<img src="images/vissketch19.png" alt="The locations are represented as lines. The Visitor activity is coded as ares, which is slightly more salient than hue/saturation used in the heatmap above." width="2000" />
+<p class="caption">
+Figure 23: The locations are represented as lines. The Visitor activity is coded as ares, which is slightly more salient than hue/saturation used in the heatmap above.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-26"></span>
+<img src="images/vissketch20.png" alt="Clusters of attractions are shown as circles made of circles, like a pearl necklace. The size of the large (necklace) and small (pearls) changes as a result of visitor activity. If nothing is highlighted it will look like a long motion blur / multiple exposure and should give an idea of the overall change. By using the mouse, individual moments in time can be highlighted." width="1693" />
+<p class="caption">
+Figure 24: Clusters of attractions are shown as circles made of circles, like a pearl necklace. The size of the large (necklace) and small (pearls) changes as a result of visitor activity. If nothing is highlighted it will look like a long motion blur / multiple exposure and should give an idea of the overall change. By using the mouse, individual moments in time can be highlighted.
+</p>
+</div>
+</div>
+<h3 id="visualizing-visitors-at-rides-details">Visualizing Visitors at Rides: Details</h3>
+<p>For a more detailed view of the activity at the rides it should be possible to work with small multiples. There are three plots I thought could be useful:</p>
+<ul>
+<li>The top one shows the number of vistors and the duration of their stay throughout the day(s)</li>
+<li>The midle one shows how many visitors check-in at each time. Different sizes for the rolling average window are displayed at the same time to allow the detection of long term patterns and short term patterns.</li>
+<li>The botom plot shows where visitors are coming from and going to at each moment in time. By adding some simple interactivity one could find times where unusual things are happening. This likely is too complex or small multiples, but it’s definitely somethin I’d like to try.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/vissketch21.png" width="1236" /></p>
+</div>
+<p>The plot below shows where else the visitors from a certain ride are also going (and how far these locations are from it). To some extend this could be incorporated in the third plot above.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/vissketch22.png" width="1068" /></p>
+</div>
+<p>These are some ideas I definitely want to try out. There are some simpler plots (histograms and the like) that could be added around them to add more information.</p>
+<h2 id="preparing-data-for-the-visualization">Preparing Data for the Visualization</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-29"></span>
+<img src="images/dataprep1.png" alt="The check-in locations in the park with the IDs and categories corresponding to the the map. Note that not all locations can be checked in to (cf. full list of categories on the right)." width="1180" />
+<p class="caption">
+Figure 25: The check-in locations in the park with the IDs and categories corresponding to the the map. Note that not all locations can be checked in to (cf. full list of categories on the right).
+</p>
+</div>
+</div>
+<p>To prepare the park data for the visualization some data preparation is necessary. One thing I have done is to figure out the IDs, names and categories of all check-in locations. I also made a distance matrix for walking distance between all check-in locations and some smaller things.</p>
+<p>I thought that some of it could be useful to other course participants, so <a href="https://github.com/Teebusch/datavis-course">I’ve put the code on Github</a>. Instructions and details can be found there. The code is heavily commented, but if there are any questions, I’d be happy to help. Also if anything seems odd, let me know and I will check it. It’s not unlikely that I made a mistake (it should also go without saying that this is “use at your own risk”).</p>
+<h2 id="sketching-in-r-crooked-paths">Sketching in R – Crooked Paths</h2>
+<p>I tried to build some of the visualizations I had in mind for the park data in R. With ggplot it’s easy to try out ideas quickly and detect problems. I started with the crooked paths visualization, in which the “regularity” of each visitor’s path through the park is shown, so that unusual paths can be detected. For this I calculated <strong>transitional probabilities</strong> for each sequence of two check-ins (How likely is it that someone checks in at location B after they visited A?). These probabilities are normalized for each check-in location and translated into an angle (0–180 degree) and a hue. <strong>The brighter and more “downward pointing” a line segment is, the lower the transitional probability.</strong></p>
+<p>There are over 17.000 paths in the data set, so some kind of filtering or faceting is needed. For now I’ve split the paths by the number of check-ins. I also <strong>randomly sampled 3000 visitors</strong> to spare my laptop some pain. Here’s what the sketch looks like:</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="images/rsketch1.png" width="873" /></p>
+</div>
+<p>It’s obvious that showing too many paths at the same time will not work. In the actual visualization the number of paths shown should be limited through some kind of filtering.</p>
+<p>In the plot below I’m showing just 200 paths divided over different buckets. The further to the right a line segment points, the lower the transitional probability. The small number works much better for detecting interesting paths. It’s still quite crowded, though, and interactivity with brushing and highlighting will be key to make this work.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="images/rsketch2.png" width="873" /></p>
+</div>
+<p>One way to make it easier to spot strange paths is to offset the individual path’s starting points a bit, and sort them according to their “crookedness”. This can be seen below. In this case I’m sorting them by their average displacement. The nice thing about this is that the line ends (white dots) double as a scatter plot with the “crookedness” mapped on the horizontal axis and the length of the path on the vertical axis. This can help to spot ouliers (say, short but very crooked paths).</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="images/rsketch3.png" width="873" /></p>
+</div>
+<p>Instead of allowing the paths to “recover” from their crookedness, we can also accumulate it. For every unusual transition, the path gets slightly more bent to the right. This gives us a plot like the one below.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="images/rsketch4.png" width="873" /></p>
+</div>
+<p>In general, I am not 100% satisfied with this idea. It looks visually pleasing and it could help to detect some outliers, but it does not accomodate the many data points and it does not work great as a data display. I’m sure it can still be improved, and I will think about how to do that.</p>
+<h2 id="sketching-in-r-coming-and-going">Sketching in R – Coming and Going</h2>
+<p>Here’s another visualization of the park data I’m working on. It shows <strong>people checking in and leaving different locations.</strong> Each subplot is one location. Every line represents a visitor entering (lines on top) or leaving it (lines on bottom). The small circles in the center indicate the <em>number of checked in visitors</em> per 15 minute time window. The hue shows <em>how long</em> the visitors stay.</p>
+<div class="layout-chunk" data-layout="l-screen">
+<div class="figure"><span id="fig:unnamed-chunk-34"></span>
+<img src="images/rsketch5.png" alt="Visitors entering and leaving different locations on Friday. It looks a bit like hair color samples. (Note: the dots in the center don't work as they are supposed to, yet, but it's just a sketch anyways.)" width="2000" />
+<p class="caption">
+Figure 26: Visitors entering and leaving different locations on Friday. It looks a bit like hair color samples. (Note: the dots in the center don’t work as they are supposed to, yet, but it’s just a sketch anyways.)
+</p>
+</div>
+</div>
+<p>It’s possible to spot patterns and differences between locations. See for example the <em>SabreTooth Theatre</em> (2nd row from the bottom, 2nd plot from the left): people are entering almost continuously, but leaving in large groups in regular intervals. I imagine people wait around for the show to begin and then leave quickly once it is over. A similar pattern can be seen for the <em>Scholtz Express</em> (two to the right) — probably a train that takes in a large group of people at a time and spits them out ~10 minutes later.</p>
+<p>However, there is a lot of fine tuning needed to really make this visualization work:</p>
+<ul>
+<li><strong>The hue doesn’t work that well,</strong> because the distribution of the duration is heavily right-skewed. Some transformation might help. However the lines being translucent and overlaying each other also muddles the color-coding.</li>
+<li><strong>The dots in the center overlap too much.</strong> It’s not really possible to read any useful information from them. As an alternative I put a bar plot in the center (see below). This works better to show the summary data, but obscures the line endings a lot. Maybe it is something for the detail view?</li>
+<li><strong>The plot takes a few minutes to draw.</strong> It’s a lot of data (more than 16.000 curves for Friday alone). As an svg file it is almost 200 Mb large. That means that some compromise is necessary to make this work as an interactive visualization. There are lots of overlapping lines — maybe it’s possible to reduce or summarize them?</li>
+<li><strong>The subplots are arranged haphazardly.</strong> Arranging them by location- category, total number of visitors, proximity or similar would make sense.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-35"></span>
+<img src="images/rsketch6.png" alt="The same 'glyph', but with bars rather than dots in the center. The top row indicates number of checked in visitors, the bottom row indicates median duration of stay. (Yes, the color scales of the lines and the bars don't match.)" width="900" />
+<p class="caption">
+Figure 27: The same ‘glyph’, but with bars rather than dots in the center. The top row indicates number of checked in visitors, the bottom row indicates median duration of stay. (Yes, the color scales of the lines and the bars don’t match.)
+</p>
+</div>
+</div>
+<h3 id="adding-interactivity">Adding Interactivity</h3>
+<p>A plot with small multiples like the one above serves as a good <strong>overview.</strong> Selecting an individual location could then reveal a <strong>detailed view.</strong></p>
+<p>In the detail view the visitors’ lines could be separated by where they are coming from and going to. The user could then choose to <em>highlight all connections with specific locations</em> by hovering over the points in the center or at the edges. One could then, for example, see which ride people are coming from when they check into <em>Liggement Fix-Me-Up</em> (the medical station, I presume). This could tell us which rides cause the most injuries. A static version of the detail plot can be seen below:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/rsketch7.png" width="1200" /></p>
+</div>
+<p>There are some improvements that can be made to the detail plot:</p>
+<ul>
+<li><strong>Make it interactive</strong></li>
+<li><strong>Position, sort, size and color</strong> the dots at the top and bottom to show the location’s category, total contribution of visitors, proximity to each other, or distance to the selected location. Of course the dots should also be labeled.</li>
+<li><strong>Again, it takes quite long to draw the plot.</strong> Not as long as for the plot above, but likely too long to make the interaction feel smooth.</li>
+<li><strong>Currently, there is no location id for “not in the park”.</strong> I believe the rows where people just entered the park or leave it afterwards are simply being dropped (not shown) by ggplot. This must be fixed.</li>
+</ul>
+<p>I’m much happier with this visualization than with the crooked paths. It looks nice, works good for detecting patterns and can pack a lot of information. The main challenge will be to make this interactive.</p>
+<h2 id="final-visualization-with-d3.js">Final Visualization with D3.js</h2>
+<p>Here’s the final result. You can try it yourself at <a href="https://teebusch.github.io/park-vis/." class="uri">https://teebusch.github.io/park-vis/.</a></p>
+<p>You can also inspect the source code (including all the R code for data munging and sketching) on <a href="https://github.com/Teebusch/park-vis">Github</a>.</p>
+<p>We worked with a data set of visitor movements through a (simulated) amusement park. Over the course of a weekend each visitor’s position in the park and their use of the various attractions (rides, shows etc.) was tracked. There are more than 26 million records. The data contains traces of disturbances in park operations and interesting patterns for us to discover.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="images/finalscreenshot.png" width="758" /></p>
+</div>
+<p>We had to go through all the steps of defining and implementing a visualization project. The goal of the assignment was open-ended. A personal goal of mine was to get more into D3.js and create a customized, truly interactive data visualizations.</p>
+<h3 id="concept">Concept</h3>
+<p>After multiple rounds of sketching on paper and in R I decided to visualize the <strong>visitor flow between the different attractions</strong> in the park, and the way it changes over time. The visualization should not lead up to a single conclusion but rather allow the user to explore the data freely, while making it easy to spot unusual events and patterns. A visualization like this could be useful, for example, for park management.</p>
+<h3 id="implementation">Implementation</h3>
+<p>When I used R to implement my idea with real data, it became clear that there were some interesting patterns. However, for the visualization to really work, the interface had to be more responsive and interactive than what ggplot and Shiny could do — D3 to the rescue!</p>
+<p>A while ago I had read Scott Murray’s <strong>“Interactive Data Visualization for the Web”</strong> and followed a beginner’s D3 course on Lynda.com. To get a more in-depth understanding of D3 I picked up Elijah Meeks’ <strong>“D3.js in Action”.</strong></p>
+<p>Some examples of insights gained from the visualization are provided in the figures below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-38"></span>
+<img src="images/finalscreenshot2.png" alt="Total number of visitors in park and at Grinosaurus stage throughout the 3 days. It's easy to see that the second one of the bi-daily show did not take place on Sunday. Also: the second show on both Friday and Sunday seems to be more popular, even though the number of visitors in the park is the same." width="302" />
+<p class="caption">
+Figure 28: Total number of visitors in park and at Grinosaurus stage throughout the 3 days. It’s easy to see that the second one of the bi-daily show did not take place on Sunday. Also: the second show on both Friday and Sunday seems to be more popular, even though the number of visitors in the park is the same.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-39"></span>
+<img src="images/finalscreenshot3.png" alt="Example: Visitor flow to/from Liggement Fix-Me-Up. Most people who need 'fixing up' come from the Firefall and Atmosfear thrill rides. Interestingly, most people who have just been fixed up go right back to one of the thrill rides. There also seems to be a strong peak in accidents on Friday." width="302" />
+<p class="caption">
+Figure 29: Example: Visitor flow to/from Liggement Fix-Me-Up. Most people who need ‘fixing up’ come from the Firefall and Atmosfear thrill rides. Interestingly, most people who have just been fixed up go right back to one of the thrill rides. There also seems to be a strong peak in accidents on Friday.
+</p>
+</div>
+</div>
+<h3 id="limitations">Limitations</h3>
+<p>Due to time constraints and the steep learning curve of D3, some features could not be implemented before the submission deadline of the asgignment. Most unfortunately, the final implementation does not contain a “small multiples” view of all locations with their visitor number and check-in durations, as sketched in R. This would be a very useful addition to the interface, to help the user get an overview before “drilling down”. Legends for heat maps and circle sizes are missing, too.</p>
+<p>However, I won’t add to it anymore. I’ve learned a lot doing this project, but there is a diminishing return. There’s a lot more to learn about designing and implementing visualizations. In particular the early sketching and conceptualizing – getting from a data set to a visualization idea – is something that needs a lot of practice. It’s better to look for a new challenge.</p>
+<hr />
+<p>Do you like the visualization? Did it make you hungry for a plate of colorful spaghetti? Tell me about it! <span class="citation" data-cites="drtobilotti">[@drtobilotti]</span>(<a href="https://twitter.com/drtobilotti" class="uri">https://twitter.com/drtobilotti</a>)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\nbio: “Hearing researcher by day, creative coder by night. in Oslo, organizing social events for introverts & teaching to code. Pomelo is a super fruit. I never tweet @drtobilotti” url: https://github.com/teebusch url: https://instagram.com/tobilotti url: https://linkedin.com/tobias-busch\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-11-06T00:22:23+01:00"
+    },
+    {
+      "path": "index.html",
+      "title": "tobiasbusch.xyz",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-11-06T00:21:38+01:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
