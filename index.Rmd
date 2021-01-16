@@ -1,5 +1,0 @@
----
-title: "tobiasbusch.xyz"
-site: distill::distill_website
-listing: posts
----

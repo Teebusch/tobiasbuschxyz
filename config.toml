@@ -1,0 +1,17 @@
+baseURL = "http://tobiasbusch.xyz/"
+languageCode = "en-us"
+title = "tobiasbusch.xyz"
+
+# Novela settings
+theme = "github.com/forestryio/hugo-theme-novela"
+
+paginate = 6
+
+[social]
+twitter= "https://twitter.com/tobilottii"
+github= "https://github.com/Teebusch"
+linkedin= "https://www.linkedin.com/tobias-busch"
+instagram = "https://www.instagram.com/tobilotti/"
+
+[taxonomies]
+author = "authors"
