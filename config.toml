@@ -1,6 +1,7 @@
 baseURL = "http://tobiasbusch.xyz/"
 languageCode = "en-us"
 title = "tobiasbusch.xyz"
+copyright = "Tobias Busch"
 
 # Novela settings
 theme = "github.com/forestryio/hugo-theme-novela"

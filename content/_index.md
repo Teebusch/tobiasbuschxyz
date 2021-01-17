@@ -1,7 +1,5 @@
 ---
 hero:
-  heading: Hei, I'm Tobias!
+  heading: Hi, I'm Tobias! I write about R and data visualization.
   maxWidthPX: 652
-seo:
-  image: /images/hero-2.jpg
 ---
