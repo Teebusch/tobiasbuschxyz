@@ -13,9 +13,7 @@ authors:
   - Tobias Busch
 ---
 
-```{r include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-```
+
 
 In 2018, I took a semester-long course on data visualization at KU Leuven. 
 It was a course from the statistics Master's program, taught by Prof. Jan Aerts.
@@ -59,9 +57,15 @@ Most visitors arrived before 10am and **75% of visitors stayed for at least 12 h
 maximum, given the opening hours, 8am to 11.30pm). The shortest stay was just 
 10 minutes long (what happened there?).
 
-```{r, fig.cap="The (simulated) theme park. Check-in locations are marked by numbers."}
+
+```r
 knitr::include_graphics("./images/parkmap.jpg")
 ```
+
+<div class="figure">
+<img src="./images/parkmap.jpg" alt="The (simulated) theme park. Check-in locations are marked by numbers."  />
+<p class="caption">Figure 1: The (simulated) theme park. Check-in locations are marked by numbers.</p>
+</div>
 
 ### Movements and Check-Ins
 
@@ -79,9 +83,15 @@ We can plot the **accumulated time** that visitors have spent in each 5x5 meter
 grid of the park ("movements") and at each check-in location.
 
 
-```{r, fig.cap="Accumulated time spent on each 5x5 meter grid (square-root). Circles indicate check-in locations, diameter indicates time spent in the location."}
+
+```r
 knitr::include_graphics("./images/checkinplot.png")
 ```
+
+<div class="figure">
+<img src="./images/checkinplot.png" alt="Accumulated time spent on each 5x5 meter grid (square-root). Circles indicate check-in locations, diameter indicates time spent in the location." width="1500" />
+<p class="caption">Figure 2: Accumulated time spent on each 5x5 meter grid (square-root). Circles indicate check-in locations, diameter indicates time spent in the location.</p>
+</div>
 
 Although the plot does not show whether there are more people in a given area, 
 or people just stay longer, it's obvious that **not all areas are equally frequented.** This may be the case because there is a a foodcourt, a resting 
@@ -116,17 +126,29 @@ Some interesting question come to mind:
 
 We can also plot the **most frequented areas and check-in locations for each day and time.** I don't see any striking irregularities on any of the days. This is a bit unexpected, since there was a major incident in the park on one of the days, and I would expect this to be visible. I may be looking at the data in the wrong way.
 
-```{r, layout="l-screen", fig.cap="Top 30% of areas and locations (circles) per day (top to bottom: Friday, Saturday, Sunday) and two-hour interval (left to right: 8–10am, 10am–12pm, …)."}
+
+```r
 knitr::include_graphics("./images/checkinplotsm.png")
 ```
+
+<div class="figure">
+<img src="./images/checkinplotsm.png" alt="Top 30% of areas and locations (circles) per day (top to bottom: Friday, Saturday, Sunday) and two-hour interval (left to right: 8–10am, 10am–12pm, …)." width="2000" />
+<p class="caption">Figure 3: Top 30% of areas and locations (circles) per day (top to bottom: Friday, Saturday, Sunday) and two-hour interval (left to right: 8–10am, 10am–12pm, …).</p>
+</div>
 
 ### Paths
 
 If we plot some individual visitors' path through the park we can see that there are typical patterns as well as individual differences.
 
-```{r, layout="l-page", fig.cap="Paths of 30 random visitors through the park. Shade of blue indicate time of the day, pink dots indicate check-ins."}
+
+```r
 knitr::include_graphics("./images/pathssm.png")
 ```
+
+<div class="figure">
+<img src="./images/pathssm.png" alt="Paths of 30 random visitors through the park. Shade of blue indicate time of the day, pink dots indicate check-ins." width="1000" />
+<p class="caption">Figure 4: Paths of 30 random visitors through the park. Shade of blue indicate time of the day, pink dots indicate check-ins.</p>
+</div>
 
 Again, some questions come to mind:
 
@@ -168,9 +190,15 @@ Attractions may be **closed down** and inaccessible to visitors during certain t
 
 Notably, there could be locations where people do not have to check-in but which they still seek out intentionally and for longer times, such as restrooms and food courts.
 
-```{r, fig.cap="An early design sketch"}
+
+```r
 knitr::include_graphics("./images/designsketch1.jpeg")
 ```
+
+<div class="figure">
+<img src="./images/designsketch1.jpeg" alt="An early design sketch"  />
+<p class="caption">Figure 5: An early design sketch</p>
+</div>
 
 ### Visitors
 
@@ -178,9 +206,15 @@ Visitors enter the park, spend some amount of time there, then leave again. Duri
 
 For visitors it makes sense to look for patterns related to their **v**isiting time\*\* in addition to clock time. That is, how much time has passed since they entered the park. For example, visitors could be getting slower and less active towards the end of their visit, or build the courage to try out the more daring rides.
 
-```{r, fig.cap="An early design sketch"}
+
+```r
 knitr::include_graphics("./images/designsketch2.jpeg")
 ```
+
+<div class="figure">
+<img src="./images/designsketch2.jpeg" alt="An early design sketch"  />
+<p class="caption">Figure 6: An early design sketch</p>
+</div>
 
 ## Visualization Sketches
 
@@ -192,61 +226,145 @@ I also didn't bother with sketching maps, because I have already visualized the 
 
 Anyways, enough talk. Here are my sketches:
 
-```{r, fig.cap="This was more of a reminder of what the data structure could look like than a visualization sketch."}
+
+```r
 knitr::include_graphics("./images/vissketch1.jpeg")
 ```
 
-```{r, fig.cap="Some simple plots that show the average hourly visitor numbers (or some other attraction-related statistic of choice) for all attractions in the park, color-coding different areas. I'm surely using too many circles in all my sketches. It looks nicer, but a bar plot would likely be better in many cases."}
+<div class="figure">
+<img src="./images/vissketch1.jpeg" alt="This was more of a reminder of what the data structure could look like than a visualization sketch."  />
+<p class="caption">Figure 7: This was more of a reminder of what the data structure could look like than a visualization sketch.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch2.jpeg")
 ```
 
-```{r, fig.cap="**Top left:** for all attractions, which other attractions did the visitors go to? **Top right:** I was trying to wrap my head around the three different ways that visitors interact with attractions in the park. Not really a visualization sketch. **Bottom:** For each attraction, how many people passed by, checked in, never went there?"}
+<div class="figure">
+<img src="./images/vissketch2.jpeg" alt="Some simple plots that show the average hourly visitor numbers (or some other attraction-related statistic of choice) for all attractions in the park, color-coding different areas. I'm surely using too many circles in all my sketches. It looks nicer, but a bar plot would likely be better in many cases."  />
+<p class="caption">Figure 8: Some simple plots that show the average hourly visitor numbers (or some other attraction-related statistic of choice) for all attractions in the park, color-coding different areas. I'm surely using too many circles in all my sketches. It looks nicer, but a bar plot would likely be better in many cases.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch3.jpeg")
 ```
 
-```{r, fig.cap="**Left (orange):** can we show a visitors path through the park and contrast it against other wisitors paths? **Right:** I realized that for any two visitors check-in/no-check-in profile, we can define the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance). This means we can find identical profiles, profiles with 1 (2, 3, ... n) differences."}
+<div class="figure">
+<img src="./images/vissketch3.jpeg" alt="**Top left:** for all attractions, which other attractions did the visitors go to? **Top right:** I was trying to wrap my head around the three different ways that visitors interact with attractions in the park. Not really a visualization sketch. **Bottom:** For each attraction, how many people passed by, checked in, never went there?"  />
+<p class="caption">Figure 9: **Top left:** for all attractions, which other attractions did the visitors go to? **Top right:** I was trying to wrap my head around the three different ways that visitors interact with attractions in the park. Not really a visualization sketch. **Bottom:** For each attraction, how many people passed by, checked in, never went there?</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch4.jpeg")
 ```
 
-```{r, fig.cap="Here I'm mostly expanding on the idea with the Hamming distance. Can we show the way that other almost identical visitors are different. Might be a good way to detect unusual patterns."}
+<div class="figure">
+<img src="./images/vissketch4.jpeg" alt="**Left (orange):** can we show a visitors path through the park and contrast it against other wisitors paths? **Right:** I realized that for any two visitors check-in/no-check-in profile, we can define the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance). This means we can find identical profiles, profiles with 1 (2, 3, ... n) differences."  />
+<p class="caption">Figure 10: **Left (orange):** can we show a visitors path through the park and contrast it against other wisitors paths? **Right:** I realized that for any two visitors check-in/no-check-in profile, we can define the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance). This means we can find identical profiles, profiles with 1 (2, 3, ... n) differences.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch5.jpeg")
 ```
 
-```{r, fig.cap="Between any two check-in locations there is a transitional probability (and for longer sequences of check-in locations we could define the n-gram probability using Markov chains). Can we use this to find people who take very uncommon paths through the park?"}
+<div class="figure">
+<img src="./images/vissketch5.jpeg" alt="Here I'm mostly expanding on the idea with the Hamming distance. Can we show the way that other almost identical visitors are different. Might be a good way to detect unusual patterns."  />
+<p class="caption">Figure 11: Here I'm mostly expanding on the idea with the Hamming distance. Can we show the way that other almost identical visitors are different. Might be a good way to detect unusual patterns.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch6.jpeg")
 ```
 
-```{r, fig.cap="I was trying to find a way to show when people check into a location, how many check in, and for how long they stay. I first tried some fancy glyphs (the angular and toilet brush shaped things). But in the end I found the scatter plot with bars (bottom right) the clearest way to do it."}
+<div class="figure">
+<img src="./images/vissketch6.jpeg" alt="Between any two check-in locations there is a transitional probability (and for longer sequences of check-in locations we could define the n-gram probability using Markov chains). Can we use this to find people who take very uncommon paths through the park?"  />
+<p class="caption">Figure 12: Between any two check-in locations there is a transitional probability (and for longer sequences of check-in locations we could define the n-gram probability using Markov chains). Can we use this to find people who take very uncommon paths through the park?</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch7.jpeg")
 ```
 
-```{r, fig.cap="**Top:** This is similar to some of the previous sketches. we can show how many people travel between any two locations, in which direction, and how long they take (relative to each other). **Bottom right:** The line shows the path between two locations. On the way there may be other locations (smaller black bars). The size of these show how many (proportion) of the people who went from A to B stopped at that inbetween location. Instead of circles little squares / bars could work well for this. Showing the path (line)."}
+<div class="figure">
+<img src="./images/vissketch7.jpeg" alt="I was trying to find a way to show when people check into a location, how many check in, and for how long they stay. I first tried some fancy glyphs (the angular and toilet brush shaped things). But in the end I found the scatter plot with bars (bottom right) the clearest way to do it."  />
+<p class="caption">Figure 13: I was trying to find a way to show when people check into a location, how many check in, and for how long they stay. I first tried some fancy glyphs (the angular and toilet brush shaped things). But in the end I found the scatter plot with bars (bottom right) the clearest way to do it.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch8.jpeg")
 ```
 
-```{r, fig.cap="Most of this is similar to the bottom right one above. There is a reference location (marked with 100%). We want to know which other locations the visitors of this reference attraction have visited (or not visited!). The idea is similar to Amazon's 'Customers who bought this also bought...', but it's also showin you how many of them did so."}
+<div class="figure">
+<img src="./images/vissketch8.jpeg" alt="**Top:** This is similar to some of the previous sketches. we can show how many people travel between any two locations, in which direction, and how long they take (relative to each other). **Bottom right:** The line shows the path between two locations. On the way there may be other locations (smaller black bars). The size of these show how many (proportion) of the people who went from A to B stopped at that inbetween location. Instead of circles little squares / bars could work well for this. Showing the path (line)."  />
+<p class="caption">Figure 14: **Top:** This is similar to some of the previous sketches. we can show how many people travel between any two locations, in which direction, and how long they take (relative to each other). **Bottom right:** The line shows the path between two locations. On the way there may be other locations (smaller black bars). The size of these show how many (proportion) of the people who went from A to B stopped at that inbetween location. Instead of circles little squares / bars could work well for this. Showing the path (line).</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch9.jpeg")
 ```
 
-```{r, fig.cap="Here I played with the idea of river plots (I believe that's what they are called). They show the flow of visitors to and from the reference location. You can see which attractions they come from, and where they go afterwards. We could plot just the previous and next steps of their journey (top right), or multiple steps (top left)."}
+<div class="figure">
+<img src="./images/vissketch9.jpeg" alt="Most of this is similar to the bottom right one above. There is a reference location (marked with 100%). We want to know which other locations the visitors of this reference attraction have visited (or not visited!). The idea is similar to Amazon's 'Customers who bought this also bought...', but it's also showin you how many of them did so."  />
+<p class="caption">Figure 15: Most of this is similar to the bottom right one above. There is a reference location (marked with 100%). We want to know which other locations the visitors of this reference attraction have visited (or not visited!). The idea is similar to Amazon's 'Customers who bought this also bought...', but it's also showin you how many of them did so.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch10.jpeg")
 ```
 
-```{r, fig.cap="**Left:** continuation of above. **Right:** Maybe someone can explain to me what I was trying to do here?"}
+<div class="figure">
+<img src="./images/vissketch10.jpeg" alt="Here I played with the idea of river plots (I believe that's what they are called). They show the flow of visitors to and from the reference location. You can see which attractions they come from, and where they go afterwards. We could plot just the previous and next steps of their journey (top right), or multiple steps (top left)."  />
+<p class="caption">Figure 16: Here I played with the idea of river plots (I believe that's what they are called). They show the flow of visitors to and from the reference location. You can see which attractions they come from, and where they go afterwards. We could plot just the previous and next steps of their journey (top right), or multiple steps (top left).</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch11.jpeg")
 ```
 
-```{r, fig.cap="These are mostly variations on ideas I've already sketched elsewhere."}
+<div class="figure">
+<img src="./images/vissketch11.jpeg" alt="**Left:** continuation of above. **Right:** Maybe someone can explain to me what I was trying to do here?"  />
+<p class="caption">Figure 17: **Left:** continuation of above. **Right:** Maybe someone can explain to me what I was trying to do here?</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch12.jpeg")
 ```
 
-```{r, fig.cap="I was trying to show where in the park visitors are, and how that changes throughout the day. I am a bit fond of the 'solar system' idea in the bottom left. It's a circular bar plot, where each circle is an attraction and the bars show the number of visitors around the clock. The larger a circle, the more visitors in total."}
+<div class="figure">
+<img src="./images/vissketch12.jpeg" alt="These are mostly variations on ideas I've already sketched elsewhere."  />
+<p class="caption">Figure 18: These are mostly variations on ideas I've already sketched elsewhere.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch13.jpeg")
 ```
 
-```{r, fig.cap="The **top left** shows a visitors' path from location to location. the horizontal distance is the time they traveled, the vertical distance is the distance thy traveled. Both could be normalized to the expected (e.g. average) time/distance for traveling between the two locations. The **bottom** one is similar to the area plot in the previous sketch."}
+<div class="figure">
+<img src="./images/vissketch13.jpeg" alt="I was trying to show where in the park visitors are, and how that changes throughout the day. I am a bit fond of the 'solar system' idea in the bottom left. It's a circular bar plot, where each circle is an attraction and the bars show the number of visitors around the clock. The larger a circle, the more visitors in total."  />
+<p class="caption">Figure 19: I was trying to show where in the park visitors are, and how that changes throughout the day. I am a bit fond of the 'solar system' idea in the bottom left. It's a circular bar plot, where each circle is an attraction and the bars show the number of visitors around the clock. The larger a circle, the more visitors in total.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch14.jpeg")
 ```
+
+<div class="figure">
+<img src="./images/vissketch14.jpeg" alt="The **top left** shows a visitors' path from location to location. the horizontal distance is the time they traveled, the vertical distance is the distance thy traveled. Both could be normalized to the expected (e.g. average) time/distance for traveling between the two locations. The **bottom** one is similar to the area plot in the previous sketch."  />
+<p class="caption">Figure 20: The **top left** shows a visitors' path from location to location. the horizontal distance is the time they traveled, the vertical distance is the distance thy traveled. Both could be normalized to the expected (e.g. average) time/distance for traveling between the two locations. The **bottom** one is similar to the area plot in the previous sketch.</p>
+</div>
 
 ## Final Visualization Sketches
 
@@ -258,17 +376,26 @@ The idea is to show individual visitors' paths in a way that makes unusual paths
 
 Paths can be sorted according to their crookedness, too. Other types of clustering can be used, as well, e.g. based on Hamming distance (see below). Clusters could also be shown separately, and transitional probabilities could be calculated per cluster rather than overall.
 
-```{r, fig.cap="Hovering should highligh an individual path. When a path is selected, additional detail / plots for this visitor can be displayed (not shown)."}
+
+```r
 knitr::include_graphics("./images/vissketch15.png")
 ```
+
+<div class="figure">
+<img src="./images/vissketch15.png" alt="Hovering should highligh an individual path. When a path is selected, additional detail / plots for this visitor can be displayed (not shown)." width="1688" />
+<p class="caption">Figure 21: Hovering should highligh an individual path. When a path is selected, additional detail / plots for this visitor can be displayed (not shown).</p>
+</div>
 
 Instead of length of all paths being equal, one could encode other information in the length, such as the time it took to travel between the location or the distance traveled. Alternatively, keeping each individual check-in segment at the same length, people who have more checkins will stand out more. Filtering (or highlighting) by length is also an option and could be realized with simple mouse interactions (e.g. horizontal position of the mouse filters paths of certain lenghts).
 
 Alternatively, probability of transitions could be encoded in the width of the line, as shown below. This might have the advantage that paths will not overlap. However, I have a feeling that the option above is visually more appealing, and I like the analogy with *"crooked paths".*
 
-```{r, fig.cap=""}
+
+```r
 knitr::include_graphics("./images/vissketch16.png")
 ```
+
+<img src="./images/vissketch16.png" width="1685" />
 
 The idea could be extended using the probabilities of longer chains, i.e. n-grams / Markov chains, rather than simple transitional probabilites between two locations (i.e. *1*-grams). For a first atempt, this seems unnecessary.
 
@@ -278,9 +405,15 @@ As shown in a previous blog post, we can divide a visitors path into visited and
 
 The Hamming distance can also be used for clustering visitors, which could be useful to add some order / filtering to the plots (including the rooked paths plot above).
 
-```{r, fig.cap="Instead of highlighting 'unusual' check-in locations, one could just color code the number of check-ins at that location. Some visitors may stand out quite a bit if we do that."}
+
+```r
 knitr::include_graphics("./images/vissketch17.png")
 ```
+
+<div class="figure">
+<img src="./images/vissketch17.png" alt="Instead of highlighting 'unusual' check-in locations, one could just color code the number of check-ins at that location. Some visitors may stand out quite a bit if we do that." width="1202" />
+<p class="caption">Figure 22: Instead of highlighting 'unusual' check-in locations, one could just color code the number of check-ins at that location. Some visitors may stand out quite a bit if we do that.</p>
+</div>
 
 ### Visualizing Visitors at Rides: Overview
 
@@ -290,19 +423,34 @@ One useful plot would be some sort of overview of all locations over time. I don
 
 The paths between locations can be summarized as tiles as well, because we always know where people are coming from and where they are heading to, i.e. which path they are on.
 
-```{r}
+
+```r
 knitr::include_graphics("./images/vissketch18.png")
 ```
 
+<img src="./images/vissketch18.png" width="1305" />
+
 Instead of using a grid, one could lay out the locations/paths in a slightly less rigid way that still reflects geographial proximity or some other kind of similarity. This allows other ways of encoding information besides hue/saturation:
 
-```{r, fig.cap="The locations are represented as lines. The Visitor activity is coded as ares, which is slightly more salient than hue/saturation used in the heatmap above."}
+
+```r
 knitr::include_graphics("./images/vissketch19.png")
 ```
 
-```{r, fig.cap="Clusters of attractions are shown as circles made of circles, like a pearl necklace. The size of the large (necklace) and small (pearls) changes as a result of visitor activity. If nothing is highlighted it will look like a long motion blur / multiple exposure and should give an idea of the overall change. By using the mouse, individual moments in time can be highlighted."}
+<div class="figure">
+<img src="./images/vissketch19.png" alt="The locations are represented as lines. The Visitor activity is coded as ares, which is slightly more salient than hue/saturation used in the heatmap above." width="2000" />
+<p class="caption">Figure 23: The locations are represented as lines. The Visitor activity is coded as ares, which is slightly more salient than hue/saturation used in the heatmap above.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/vissketch20.png")
 ```
+
+<div class="figure">
+<img src="./images/vissketch20.png" alt="Clusters of attractions are shown as circles made of circles, like a pearl necklace. The size of the large (necklace) and small (pearls) changes as a result of visitor activity. If nothing is highlighted it will look like a long motion blur / multiple exposure and should give an idea of the overall change. By using the mouse, individual moments in time can be highlighted." width="1693" />
+<p class="caption">Figure 24: Clusters of attractions are shown as circles made of circles, like a pearl necklace. The size of the large (necklace) and small (pearls) changes as a result of visitor activity. If nothing is highlighted it will look like a long motion blur / multiple exposure and should give an idea of the overall change. By using the mouse, individual moments in time can be highlighted.</p>
+</div>
 
 ### Visualizing Visitors at Rides: Details
 
@@ -312,23 +460,35 @@ For a more detailed view of the activity at the rides it should be possible to w
 - The midle one shows how many visitors check-in at each time. Different sizes for the rolling average window are displayed at the same time to allow the detection of long term patterns and short term patterns.
 - The botom plot shows where visitors are coming from and going to at each moment in time. By adding some simple interactivity one could find times where unusual things are happening. This likely is too complex or small multiples, but it's definitely somethin I'd like to try.
 
-```{r}
+
+```r
 knitr::include_graphics("./images/vissketch21.png")
 ```
 
+<img src="./images/vissketch21.png" width="1236" />
+
 The plot below shows where else the visitors from a certain ride are also going (and how far these locations are from it). To some extend this could be incorporated in the third plot above.
 
-```{r}
+
+```r
 knitr::include_graphics("./images/vissketch22.png")
 ```
+
+<img src="./images/vissketch22.png" width="1068" />
 
 These are some ideas I definitely want to try out. There are some simpler plots (histograms and the like) that could be added around them to add more information.
 
 ## Preparing Data for the Visualization
 
-```{r, fig.cap="The check-in locations in the park with the IDs and categories corresponding to the the map. Note that not all locations can be checked in to (cf. full list of categories on the right)."}
+
+```r
 knitr::include_graphics("./images/dataprep1.png")
 ```
+
+<div class="figure">
+<img src="./images/dataprep1.png" alt="The check-in locations in the park with the IDs and categories corresponding to the the map. Note that not all locations can be checked in to (cf. full list of categories on the right)." width="1180" />
+<p class="caption">Figure 25: The check-in locations in the park with the IDs and categories corresponding to the the map. Note that not all locations can be checked in to (cf. full list of categories on the right).</p>
+</div>
 
 To prepare the park data for the visualization some data preparation is necessary. One thing I have done is to figure out the IDs, names and categories of all check-in locations. I also made a distance matrix for walking distance between all check-in locations and some smaller things.
 
@@ -340,29 +500,41 @@ I tried to build some of the visualizations I had in mind for the park data in R
 
 There are over 17.000 paths in the data set, so some kind of filtering or faceting is needed. For now I've split the paths by the number of check-ins. I also **randomly sampled 3000 visitors** to spare my laptop some pain. Here's what the sketch looks like:
 
-```{r, layout="l-body-outset"}
+
+```r
 knitr::include_graphics("./images/rsketch1.png")
 ```
+
+<img src="./images/rsketch1.png" width="873" />
 
 It's obvious that showing too many paths at the same time will not work. In the actual visualization the number of paths shown should be limited through some kind of filtering.
 
 In the plot below I'm showing just 200 paths divided over different buckets. The further to the right a line segment points, the lower the transitional probability. The small number works much better for detecting interesting paths. It's still quite crowded, though, and interactivity with brushing and highlighting will be key to make this work.
 
-```{r, layout="l-body-outset"}
+
+```r
 knitr::include_graphics("./images/rsketch2.png")
 ```
 
+<img src="./images/rsketch2.png" width="873" />
+
 One way to make it easier to spot strange paths is to offset the individual path's starting points a bit, and sort them according to their "crookedness". This can be seen below. In this case I'm sorting them by their average displacement. The nice thing about this is that the line ends (white dots) double as a scatter plot with the "crookedness" mapped on the horizontal axis and the length of the path on the vertical axis. This can help to spot ouliers (say, short but very crooked paths).
 
-```{r, layout="l-body-outset"}
+
+```r
 knitr::include_graphics("./images/rsketch3.png")
 ```
 
+<img src="./images/rsketch3.png" width="873" />
+
 Instead of allowing the paths to "recover" from their crookedness, we can also accumulate it. For every unusual transition, the path gets slightly more bent to the right. This gives us a plot like the one below.
 
-```{r, layout="l-body-outset"}
+
+```r
 knitr::include_graphics("./images/rsketch4.png")
 ```
+
+<img src="./images/rsketch4.png" width="873" />
 
 In general, I am not 100% satisfied with this idea. It looks visually pleasing and it could help to detect some outliers, but it does not accomodate the many data points and it does not work great as a data display. I'm sure it can still be improved, and I will think about how to do that.
 
@@ -370,9 +542,15 @@ In general, I am not 100% satisfied with this idea. It looks visually pleasing a
 
 Here's another visualization of the park data I'm working on. It shows **people checking in and leaving different locations.** Each subplot is one location. Every line represents a visitor entering (lines on top) or leaving it (lines on bottom). The small circles in the center indicate the *number of checked in visitors* per 15 minute time window. The hue shows *how long* the visitors stay.
 
-```{r, layout="l-screen", fig.cap="Visitors entering and leaving different locations on Friday. It looks a bit like hair color samples. (Note: the dots in the center don't work as they are supposed to, yet, but it's just a sketch anyways.)"}
+
+```r
 knitr::include_graphics("./images/rsketch5.png")
 ```
+
+<div class="figure">
+<img src="./images/rsketch5.png" alt="Visitors entering and leaving different locations on Friday. It looks a bit like hair color samples. (Note: the dots in the center don't work as they are supposed to, yet, but it's just a sketch anyways.)" width="2000" />
+<p class="caption">Figure 26: Visitors entering and leaving different locations on Friday. It looks a bit like hair color samples. (Note: the dots in the center don't work as they are supposed to, yet, but it's just a sketch anyways.)</p>
+</div>
 
 It's possible to spot patterns and differences between locations. See for example the *SabreTooth Theatre* (2nd row from the bottom, 2nd plot from the left): people are entering almost continuously, but leaving in large groups in regular intervals. I imagine people wait around for the show to begin and then leave quickly once it is over. A similar pattern can be seen for the *Scholtz Express* (two to the right) --- probably a train that takes in a large group of people at a time and spits them out \~10 minutes later.
 
@@ -383,9 +561,15 @@ However, there is a lot of fine tuning needed to really make this visualization 
 - **The plot takes a few minutes to draw.** It's a lot of data (more than 16.000 curves for Friday alone). As an svg file it is almost 200 Mb large. That means that some compromise is necessary to make this work as an interactive visualization. There are lots of overlapping lines --- maybe it's possible to reduce or summarize them?
 -   **The subplots are arranged haphazardly.** Arranging them by location- category, total number of visitors, proximity or similar would make sense.
 
-```{r, fig.cap="The same 'glyph', but with bars rather than dots in the center. The top row indicates number of checked in visitors, the bottom row indicates median duration of stay. (Yes, the color scales of the lines and the bars don't match.)"}
+
+```r
 knitr::include_graphics("./images/rsketch6.png")
 ```
+
+<div class="figure">
+<img src="./images/rsketch6.png" alt="The same 'glyph', but with bars rather than dots in the center. The top row indicates number of checked in visitors, the bottom row indicates median duration of stay. (Yes, the color scales of the lines and the bars don't match.)" width="900" />
+<p class="caption">Figure 27: The same 'glyph', but with bars rather than dots in the center. The top row indicates number of checked in visitors, the bottom row indicates median duration of stay. (Yes, the color scales of the lines and the bars don't match.)</p>
+</div>
 
 ### Adding Interactivity
 
@@ -393,9 +577,12 @@ A plot with small multiples like the one above serves as a good **overview.** Se
 
 In the detail view the visitors' lines could be separated by where they are coming from and going to. The user could then choose to *highlight all connections with specific locations* by hovering over the points in the center or at the edges. One could then, for example, see which ride people are coming from when they check into *Liggement Fix-Me-Up* (the medical station, I presume). This could tell us which rides cause the most injuries. A static version of the detail plot can be seen below:
 
-```{r}
+
+```r
 knitr::include_graphics("./images/rsketch7.png")
 ```
+
+<img src="./images/rsketch7.png" width="1200" />
 
 There are some improvements that can be made to the detail plot:
 
@@ -420,9 +607,12 @@ use of the various attractions (rides, shows etc.) was tracked. There are more
 than 26 million records. The data contains traces of disturbances in park
 operations and interesting patterns for us to discover.
 
-```{r, layout="l-body-outset"}
+
+```r
 knitr::include_graphics("./images/finalscreenshot.png")
 ```
+
+<img src="./images/finalscreenshot.png" width="758" />
 
 We had to go through all the steps of defining and implementing a visualization project. The goal of the assignment was open-ended. A personal goal of mine was to get more into D3.js and create a customized, truly interactive data visualizations.
 
@@ -447,13 +637,25 @@ A while ago I had read Scott Murray's **"Interactive Data Visualization for the 
 Some examples of insights gained from the visualization are provided in the 
 figures below.
 
-```{r, layout="l-body", fig.cap="Total number of visitors in park and at Grinosaurus stage throughout the 3 days. It's easy to see that the second one of the bi-daily show did not take place on Sunday. Also: the second show on both Friday and Sunday seems to be more popular, even though the number of visitors in the park is the same."}
+
+```r
 knitr::include_graphics("./images/finalscreenshot2.png")
 ```
 
-```{r, fig.cap="Example: Visitor flow to/from Liggement Fix-Me-Up. Most people who need 'fixing up' come from the Firefall and Atmosfear thrill rides. Interestingly, most people who have just been fixed up go right back to one of the thrill rides. There also seems to be a strong peak in accidents on Friday."}
+<div class="figure">
+<img src="./images/finalscreenshot2.png" alt="Total number of visitors in park and at Grinosaurus stage throughout the 3 days. It's easy to see that the second one of the bi-daily show did not take place on Sunday. Also: the second show on both Friday and Sunday seems to be more popular, even though the number of visitors in the park is the same." width="302" />
+<p class="caption">Figure 28: Total number of visitors in park and at Grinosaurus stage throughout the 3 days. It's easy to see that the second one of the bi-daily show did not take place on Sunday. Also: the second show on both Friday and Sunday seems to be more popular, even though the number of visitors in the park is the same.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/finalscreenshot3.png")
 ```
+
+<div class="figure">
+<img src="./images/finalscreenshot3.png" alt="Example: Visitor flow to/from Liggement Fix-Me-Up. Most people who need 'fixing up' come from the Firefall and Atmosfear thrill rides. Interestingly, most people who have just been fixed up go right back to one of the thrill rides. There also seems to be a strong peak in accidents on Friday." width="302" />
+<p class="caption">Figure 29: Example: Visitor flow to/from Liggement Fix-Me-Up. Most people who need 'fixing up' come from the Firefall and Atmosfear thrill rides. Interestingly, most people who have just been fixed up go right back to one of the thrill rides. There also seems to be a strong peak in accidents on Friday.</p>
+</div>
 
 ### Limitations
 

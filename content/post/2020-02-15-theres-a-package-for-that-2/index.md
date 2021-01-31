@@ -12,7 +12,8 @@ slug: an-r-package-for-everything-ep2-gaps
 author: Tobias Busch
 ---
 
-```{r}
+
+```r
 knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE)
 ```
 
@@ -35,7 +36,8 @@ If you want to add a gap to a figure's axis, you are probably looking for one of
 
 Here's a simple plot, using ggplot and `theme_classic()`
 
-```{r, fig.cap="a ggplot figure with the classic theme"}
+
+```r
 library(tidyverse)
 
 if(!require(gapminder)) install.packages("gapminder")
@@ -58,20 +60,32 @@ p <- df %>%
 p
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" alt="a ggplot figure with the classic theme" width="672" />
+<p class="caption">Figure 1: a ggplot figure with the classic theme</p>
+</div>
+
 I'd argue that the joint axis lines at the origin (i.e., in the corner on the bottom left) are not great: The two scales (GDP and Life Expectancy) are measured in very different units, and the values do not include zero. Indeed, the fact that the values are far from zero already tells us something about life in Europe, so why don't we highlight this more?
 
 Unfortunately, `ggplot` does not come with a theme where the axis lines are not joined at the origin. Luckily for us, there's `lemon` -- _"a package to freshen up your ggplots!"_. Here's how it works:
 
-```{r, fig.cap="a ggplot figure with capped axes"}
+
+```r
 if(!require(lemon)) install.packages("lemon")
 library(lemon)
 
 p + lemon::coord_capped_cart(bottom = 'both', left = 'both')
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" alt="a ggplot figure with capped axes" width="672" />
+<p class="caption">Figure 2: a ggplot figure with capped axes</p>
+</div>
+
 By default, the axes may be capped at a weird point. For more control, you can specify the axis ticks manually:
 
-```{r, fig.cap="a ggplot figure with capped axes and custom tick marks"}
+
+```r
 p + 
   lemon::coord_capped_cart(bottom = 'both', left = 'both') +
   scale_x_continuous(
@@ -80,9 +94,15 @@ p +
   )
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" alt="a ggplot figure with capped axes and custom tick marks" width="672" />
+<p class="caption">Figure 3: a ggplot figure with capped axes and custom tick marks</p>
+</div>
+
 **Note:** You have to get rid of the panel border and axis lines to see the effect. If you are not using `theme_classic()` this can be achieved by adjusting the theme of the plot like this...
 
-```{r}
+
+```r
 p + 
 theme(
   panel.border = element_blank(),
@@ -90,11 +110,14 @@ theme(
 )
 ```
 
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
 ## Bracketed axes
 
 You can also use `lemon` to make bracketed axes. These look good when you are plotting discrete variables. So instead of this...
 
-```{r, fig.cap="a ggplot figure with the classic theme"}
+
+```r
 df <- gapminder %>%
   filter(year == 2007)
 
@@ -108,9 +131,15 @@ p <- df %>%
 p
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" alt="a ggplot figure with the classic theme" width="672" />
+<p class="caption">Figure 4: a ggplot figure with the classic theme</p>
+</div>
+
 ...you get this:
 
-```{r, fig.cap="a ggplot figure with bracketed axes"}
+
+```r
 p +
   lemon::coord_flex_cart(bottom = brackets_horisontal(), left = capped_vertical('both')) +
   theme(
@@ -118,6 +147,11 @@ p +
     axis.title.x = element_text(vjust = -2)
   )
 ```
+
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" alt="a ggplot figure with bracketed axes" width="672" />
+<p class="caption">Figure 5: a ggplot figure with bracketed axes</p>
+</div>
 
 The bracketing helps to emphasise that the variable on the x-axis (continent) is a discrete variable, and to visually separate the jittered points belonging to each continent.
 
@@ -128,7 +162,8 @@ For an alternative solution using ggplot-trickery, see [this Stackoverflow answe
 
 So far we have only removed parts of the axis _lines_, leaving the data points where they are in the figure. Sometimes we'd like to skip sections of the coordinate system, for example to show outliers without having to squish together all other data points. To demonstrate this, I will add an outlier to the data:
 
-```{r, fig.cap="a ggplot figure with an extreme outlier on the y axis"}
+
+```r
 df <- gapminder %>% 
   filter(continent == "Europe", year == 2007) %>% 
   add_case(country = "Shangri-La", gdpPercap = 10000, lifeExp = 245)
@@ -145,13 +180,19 @@ p <- df %>%
 p 
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" alt="a ggplot figure with an extreme outlier on the y axis" width="672" />
+<p class="caption">Figure 6: a ggplot figure with an extreme outlier on the y axis</p>
+</div>
+
 This is bad! The outlier makes it very difficult to tell the difference in life expectancy between all the other data points. In a case like this, a log-transformation can often help to stretch out the data points with lower values while bringing those with higher values closer to them. Here a log-transformation would not help much and it would make the units harder to interpret -- _log life expectancy in years_ instead of _life expectancy in years_.
 
 Instead, it might be better to skip a range of values along the axis. You just have to make sure that the reader understands that this is what you are doing, so you don't unintentionally mislead them.
 
 To skip a range of values on the y-axis you can use the `gg.gap` package, which you can find on CRAN and [here](https://github.com/ChrisLou-bioinfo/gg.gap). It works like this:
 
-```{r, fig.cap="a ggplot figure with a gap on the y axis"}
+
+```r
 if(!require(gg.gap)) install.packages("gg.gap")
 library(gg.gap)
 
@@ -173,10 +214,16 @@ p %>%
   )
 ```
 
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" alt="a ggplot figure with a gap on the y axis" width="672" />
+<p class="caption">Figure 7: a ggplot figure with a gap on the y axis</p>
+</div>
+
 To me, `gg.gap` feels a bit fiddly and the documentation is not very clear.
 If you don't mind using base R graphics instead (thus, losing the power of the grammar of graphics), the `plotrix` package might offer a better alternative:
 
-```{r, fig.cap="a r base graphics figure with a gap on the y axes"}
+
+```r
 if(!require(plotrix)) install.packages("plotrix")
 library(plotrix)
 
@@ -195,6 +242,11 @@ plotrix::gap.plot(
 plotrix::axis.break(2, 87.2, breakcol="black", style="slash")
 plotrix::axis.break(4, 87.2, breakcol="black", style="slash")
 ```
+
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" alt="a r base graphics figure with a gap on the y axes" width="672" />
+<p class="caption">Figure 8: a r base graphics figure with a gap on the y axes</p>
+</div>
 ***
 
 Has this blog post helped you? Do you know other packages that remove things which don't spark joy? Tell me about it! [@tobilottii](https://twitter.com/tobilottii)

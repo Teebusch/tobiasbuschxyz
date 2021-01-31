@@ -11,7 +11,8 @@ slug: theres-an-r-package-for-that-ep1-making-noise
 author: Tobias Busch
 ---
 
-```{r}
+
+```r
 knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE)
 ```
 
@@ -30,7 +31,8 @@ Today we will look at packages that let R play notification sounds. This way R c
 
 The `beepr` package is a straightforward way to make R play a sound. Here's how to install the package and play a sound:
 
-```{r}
+
+```r
 install.packages("beepr")
 library(beepr)
 
@@ -40,13 +42,15 @@ beep()
 
 You can change the default "ping" sound to one of 9 alternatives, including the infamous [Wilhelm scream](https://en.wikipedia.org/wiki/Wilhelm_scream).
 
-```{r}
+
+```r
 beep(sound = "wilhelm")
 ```
 
 `beepr` can also notify you when R throws an error. Just wrap your error-prone code in the `beep_on_error()` function like this:
 
-```{r}
+
+```r
 beep_on_error(stop('I made a huge mistake!'))
 ```
 
@@ -54,7 +58,8 @@ beep_on_error(stop('I made a huge mistake!'))
 
 We can use beepr to build ourselves a rudimentary [Pomodoro timer](https://en.wikipedia.org/wiki/Pomodoro_Technique). Create a new R script `pomodoro_timer.R` and add the following code (I'm assuming you are using RStudio, otherwise the notification dialog will not work).
 
-```{r}
+
+```r
 library(beepr) 
 
 counter = 0 # amount of finished pomodoros
@@ -79,13 +84,25 @@ Of course, the `sleep()` function will block your R session. To run the code as 
 
 The job should appear in RStudio's jobs panel, run in the background and remind you when it's time to take a break.
 
-```{r, eval=TRUE, layout="l-body-outset", fig.cap="The 'source as local job' button in RStudio."}
+
+```r
 knitr::include_graphics("./images/screenshot-job.png")
 ```
 
-```{r, eval=TRUE, layout="l-body-outset", fig.cap="The Jobs panel in RStudio."}
+<div class="figure">
+<img src="./images/screenshot-job.png" alt="The 'source as local job' button in RStudio." width="453" />
+<p class="caption">Figure 1: The 'source as local job' button in RStudio.</p>
+</div>
+
+
+```r
 knitr::include_graphics("./images/screenshot-jobspanel.png")
 ```
+
+<div class="figure">
+<img src="./images/screenshot-jobspanel.png" alt="The Jobs panel in RStudio." width="926" />
+<p class="caption">Figure 2: The Jobs panel in RStudio.</p>
+</div>
 
 <aside>
 You can learn more about `beepr` [here](https://github.com/rasmusab/beepr).
@@ -95,7 +112,8 @@ You can learn more about `beepr` [here](https://github.com/rasmusab/beepr).
 
 The `BRRR` package's main (and only?) function `skrrrahh()` plays sound bites from different rappers. There are 52 different ad-libs for all sorts of situations. To use the package run this:
 
-```{r}
+
+```r
 if(!require(devtools)) {install.packages("devtools")}
 devtools::install_github("brooke-watson/BRRR")
 library("BRRR")
@@ -105,7 +123,8 @@ skrrrahh("kendrick")
 
 To have your favourite artists cheer you on while you are coding, run the following code as an RStudio background job like we did above:
 
-```{r}
+
+```r
 while (TRUE) {
   Sys.sleep(sample(5:60)) # randomly pause 5-60 seconds between cheers
   skrrrahh(-1) # a non-existing number will produce a random ad-lib
@@ -120,7 +139,8 @@ You can learn more about `BRRR` [here](https://github.com/brooke-watson/BRRR).
 
 If you are on a Mac you can make R rap without any packages at all. Simply use the operating system's built-in text-to-speech engine:
 
-```{r}
+
+```r
 system("say And if you don\\'t know, now you know!") 
 # note the double-backslash needed to escape the special character
 ```
