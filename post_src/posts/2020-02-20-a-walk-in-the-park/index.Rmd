@@ -2,7 +2,7 @@
 title: 'A Walk in the Park'
 author: Tobias Busch
 date: 2020-02-22
-output: html_document
+output: hugodown::md_document
 tags:
 - D3.js
 - R
