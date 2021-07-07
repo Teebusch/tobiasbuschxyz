@@ -1,0 +1,19 @@
+baseURL = "teebusch.github.io/tobiasbuschxyz"
+languageCode = "en-us"
+title = "tobiasbusch.xyz"
+
+# Novela settings
+theme = "github.com/forestryio/hugo-theme-novela"
+
+paginate = 6
+
+[social]
+twitter= "https://twitter.com/tobilottii"
+github= "https://github.com/forestryio/novela-hugo-starter"
+linkedin= "https://www.linkedin.com/company/forestry.io"
+instagram = "tobilotti"
+dribbble = "#"
+youtube = "#"
+
+[taxonomies]
+author = "authors"
