@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Logs
 logs
 *.log
@@ -72,3 +73,7 @@ yarn-error.log
 
 .Rproj.user/
 resources/_gen/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
