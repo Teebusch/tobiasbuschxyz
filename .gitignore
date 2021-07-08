@@ -71,8 +71,6 @@ yarn-error.log
 .netlify/
 
 .Rproj.user/
-.Rproj.user
-resources/_gen/
 .Rhistory
 .RData
 .Ruserdata
