@@ -1,0 +1,20 @@
+---
+import Center from '../components/Center.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { title, description, eyebrow, datePublished, dateModified } = Astro.props;
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    eyebrow={eyebrow}
+    datePublished={datePublished}
+    dateModified={dateModified}
+>
+    <Center>
+        <article class="prose">
+            <slot />
+        </article>
+    </Center>
+</BaseLayout>

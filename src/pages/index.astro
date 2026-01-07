@@ -1,0 +1,20 @@
+---
+import Intro from '../components/Intro/Intro.astro';
+import CenteredLayout from '../layouts/CenteredLayout.astro';
+import Now from '../components/Now.astro';
+---
+
+<CenteredLayout title="Tobias Busch">
+    <Intro />
+    <section>
+        <h3>Derzeit</h3>
+        <Now />
+        <small>
+            Inspiriert von <a
+                href="https://nownownow.com/about"
+                target="_blank"
+                rel="noopener noreferrer">nownownow.com</a
+            >
+        </small>
+    </section>
+</CenteredLayout>

@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProseLayout from '../../layouts/ProseLayout.astro';
+import DateSummary from '../../components/DateSummary.astro';
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('posts');
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<ProseLayout
+    title={post.data.title}
+    description={post.data.description}
+    eyebrow={post.data.series}
+    datePublished={post.data.datePublished}
+    dateModified={post.data.dateModified}
+>
+    <article>
+        <Image src={post.data.featuredImage} alt={post.data.title} />
+        <Content />
+    </article>
+</ProseLayout>
+
+<style>
+    hr {
+        margin: var(--space-600) 0;
+        border: none;
+        border-top: 1px solid var(--color-border);
+    }
+</style>
