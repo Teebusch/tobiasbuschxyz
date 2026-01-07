@@ -1,0 +1,209 @@
+:root {
+	--color-background: #f7f8f7;
+	--color-text: #1a1a1a;
+	--color-text-secondary: #474747;
+	--color-highlight-bg: #FBC68B;
+	--color-highlight-text: #1a1a1a;
+	--color-text-decoration: #FBC68B;
+	--color-border: #e1e1e1;
+	--color-accent: #3a6463;
+	--font-family-display: "League Spartan Variable", sans-serif; 
+	--font-family-sans: "Noto Sans Variable", sans-serif;
+
+	--space-50: 0.25rem;
+	--space-100: 0.5rem;
+	--space-200: 1rem;
+	--space-300: 1.5rem;
+	--space-400: 2rem;
+	--space-500: 3rem;
+	--space-600: 4rem;
+	--space-700: 6rem;
+	--space-800: 8rem;
+
+	/* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+	--font-size-base: 16px;
+	--font-size--2: clamp(0.7035rem, 0.8131rem + -0.1414vw, 0.7813rem);
+	--font-size--1: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
+	--font-size-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+	--font-size-1: clamp(1.35rem, 1.2206rem + 0.575vw, 1.6663rem);
+	--font-size-2: clamp(1.62rem, 1.3741rem + 1.0929vw, 2.2211rem);
+	--font-size-3: clamp(1.944rem, 1.5281rem + 1.8486vw, 2.9607rem);
+	--font-size-4: clamp(2.3328rem, 1.6726rem + 2.9343vw, 3.9467rem);
+	--font-size-5: clamp(2.7994rem, 1.7924rem + 4.4755vw, 5.2609rem);
+	--font-size-6: clamp(3.3592rem, 1.8646rem + 6.6428vw, 7.0128rem);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*:not(dialog) {
+	margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: var(--font-size-base);
+	::-moz-selection { color: var(--color-hightlight-text); background: var(--color-highlight-bg); }
+	::selection { color: var(--color-highlight-text); background: var(--color-highlight-bg); }
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-background);
+	font-family: var(--font-family-sans);
+	color: var(--color-text);
+	font-size: var(--font-size-0);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-family-display);
+	font-weight: 800;
+	letter-spacing: -0.04;
+}
+
+h1 {
+	font-size: var(--font-size-6);
+}
+h2 {
+	font-size: var(--font-size-3);
+}
+h3 {
+	font-size: var(--font-size-2);
+}
+h4, h5, h6 {
+	font-family: var(--font-family-sans);
+	font-weight: 700;
+	font-size: var(--font-size-0);
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	text-decoration-color: transparent;
+	transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 3px;
+	text-decoration-color: var(--color-text-decoration);
+}
+
+section {
+	margin-bottom: var(--space-600);
+}
+
+small {
+	display: block;
+	margin-top: var(--space-200);
+	color: var(--color-text-secondary);
+	font-size: var(--font-size--1);
+	letter-spacing: .05em;
+	line-height: 1.8;
+
+	a:hover {
+		text-decoration-thickness: 2px;
+	}
+}
+
+/* Prose styles */
+
+article.prose {
+	margin: 0 var(--space-200) var(--space-600) var(--space-200);
+	max-width: 900px;
+	margin-inline: auto;
+
+
+	h2 {
+		margin-top: var(--space-500);
+		margin-bottom: var(--space-200);
+	}
+
+	p {
+		margin-bottom: var(--space-200);
+	}
+
+	pre.astro-code {
+		border-radius: 0.5rem;
+		margin: var(--space-300) 0;
+		padding: var(--space-300);
+	}
+
+	img {
+		height: auto;
+		border-radius: 0.5rem;
+	}
+
+	figure {
+		margin-block: var(--space-500);
+	}
+
+	figcaption {
+		margin-top: 0;
+		font-size: var(--font-size--1);
+		color: var(--color-text-secondary);
+	}
+}
+
+article.prose hr {
+	margin: var(--space-400) 0;
+	border: none;
+	border-top: 1px solid var(--color-border);
+}

@@ -1,0 +1,85 @@
+---
+import Center from '../components/Center.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import DateSummary from '../components/DateSummary.astro';
+
+import '../styles/global.css';
+
+import '@fontsource-variable/league-spartan';
+import '@fontsource-variable/noto-sans';
+
+const { title, description, eyebrow, datePublished, dateModified } = Astro.props;
+
+import { ClientRouter } from 'astro:transitions';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <ClientRouter />
+        <title>tobiasbusch.xyz - {title}</title>
+    </head>
+    <body>
+        <div class="content-wrapper">
+            <Header />
+            <header>
+                <Center>
+                    <hgroup>
+                        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+                        <h1>{title}</h1>
+                        {description && <p class="description">{description}</p>}
+                    </hgroup>
+                    <div class="dates" slot="aside">
+                        <DateSummary datePublished={datePublished} dateModified={dateModified} />
+                    </div>
+                </Center>
+            </header>
+            <main>
+                <slot />
+            </main>
+            <Footer />
+        </div>
+    </body>
+</html>
+
+<style>
+    .content-wrapper {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        min-height: 100dvh;
+    }
+
+    header {
+        margin-top: var(--space-500);
+        margin-bottom: var(--space-500);
+    }
+
+    hgroup {
+        font-family: var(--font-family-display);
+
+        p.eyebrow {
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin: 0 0 var(--space-100) 0;
+            letter-spacing: 0.1em;
+            font-size: var(--font-size-0);
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        p.description {
+            margin: 0;
+            font-size: var(--font-size-3);
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+</style>

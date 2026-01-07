@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import DateSummary from './DateSummary.astro';
+
+const nowEntries = await getCollection('now');
+---
+
+<ul>
+    {
+        nowEntries.map(async (entry) => {
+            const { Content } = await render(entry);
+            return (
+                <li>
+                    <DateSummary
+                        datePublished={entry.data.datePublished}
+                        dateModified={entry.data.dateModified}
+                    />
+                    <Content />
+                </li>
+            );
+        })
+    }
+</ul>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        p:not(:first-of-type) {
+            text-indent: var(--space-400);
+        }
+    }
+</style>

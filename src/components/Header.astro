@@ -1,0 +1,47 @@
+---
+import Center from './Center.astro';
+---
+
+<header>
+    <Center>
+        <nav>
+            <a class="logo" href="/">TobiasBusch.xyz</a>
+            <div class="nav-links">
+                <a href="/garden">Garten</a>
+                <a href="/about">Über mich</a>
+            </div>
+        </nav>
+    </Center>
+</header>
+
+<style>
+    header {
+        padding-block: var(--space-300);
+        position: sticky;
+        top: 0;
+        background-color: var(--color-background);
+        background: linear-gradient(
+            180deg,
+            var(--color-background) 0%,
+            var(--color-background) 30%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        font-size: var(--font-size-1);
+        font-family: var(--font-family-display);
+    }
+    .nav-links {
+        display: flex;
+        gap: var(--space-400);
+    }
+    a {
+        color: var(--color-text);
+        font-weight: 500;
+    }
+    a:hover {
+        color: var(--color-text);
+    }
+</style>

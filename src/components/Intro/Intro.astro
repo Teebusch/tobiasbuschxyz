@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import me from './me.jpg';
+---
+
+<section>
+    <div class="blurb">
+        <p>Kognitionswissenschaftler, UX-Engineer, Webentwickler. Lebt in Köln.</p>
+        <Image
+            src={me}
+            alt="Foto von Tobias Busch"
+            width={100}
+            height={100}
+            style="border-radius: 50%; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
+        />
+    </div>
+    <div class="links">
+        <a href="/about">Mehr über mich</a>
+        <a href="/garden">Mein digitaler Garten</a>
+    </div>
+</section>
+
+<style>
+    .blurb {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-200);
+        font-size: var(--font-size-2);
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-200);
+        margin-block: var(--space-100);
+
+        a::before {
+            content: '→ ';
+        }
+    }
+</style>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationList from '../components/PublicationList.astro';
+import Vita from '../components/Vita.astro';
+import Center from '../components/Center.astro';
+---
+
+<BaseLayout title="Über mich">
+    <Center>
+        <section class="about-text">
+            <p>
+                Mich fasziniert, wie gute Informationsdarstellung komplexe Inhalte zugänglich macht.
+                Immer wenn Menschen mit anspruchsvollen Daten oder Prozessen arbeiten, brauchen sie
+                Werkzeuge, die sie wirklich unterstützen. Solche Lösungen zu entwickeln, ist mein
+                Fokus: Egal ob als Text, Datenvisualisierung, oder Webanwendung – ich bereite
+                Informationen so auf, dass wissenschaftliche Präzision auf
+                kognitionswissenschaftliche Prinzipien trifft.
+            </p>
+            <p>
+                Ich tauche gerne tief in Themen ein, um Dinge von Grund auf zu verstehen. Meine
+                Neugier führt mich dabei durch ganz unterschiedliche Felder – von Musik und
+                Elektronikbasteleien bis hin zum Nähen oder der klassischen Radierung. Ich mag es,
+                kreativ zu sein, Dinge auszuprobieren und dabei ständig Neues zu lernen.
+            </p>
+            <p>
+                Meinen Ausgleich finde ich beim Zeichnen, bei einem guten Buch oder beim Wandern in
+                den Bergen.
+            </p>
+        </section>
+    </Center>
+    <Center>
+        <section>
+            <h2>Vita</h2>
+            <Vita />
+        </section>
+    </Center>
+    <Center>
+        <section>
+            <h2>Wissenschaftliche Publikationen</h2>
+            Als Wissenschaftler habe ich zu Themen wie auditiver Wahrnehmung und Sprachentwicklung publiziert.
+            Dabei habe ich mich viel mit Statistik und Methodik, Maschinellem Lernen, Datenanalyse und
+            Datenvisualisierung beschäftigt.
+            <PublicationList />
+        </section>
+        <p slot="aside">
+            Man findet mich auch auf
+            <a
+                href="https://www.researchgate.net/profile/Tobias-Busch-4"
+                target="_blank"
+                rel="me noopener noreferrer">ResearchGate</a
+            > und
+            <a
+                href="https://orcid.org/0000-0002-8390-7892"
+                target="orcid.widget"
+                rel="me noopener noreferrer">ORCID</a
+            >
+        </p>
+    </Center>
+    <Center>
+        <section>
+            <h2>Präsentationen</h2>
+            Ich pflege eine Liste meiner Präsentationen, Workshops und Lectures auf
+            <a
+                href="https://github.com/Teebusch/presentations"
+                target="_blank"
+                rel="noopener noreferrer">Github</a
+            >.
+        </section>
+    </Center>
+    <Center>
+        <section>
+            <h2>R-Pakete</h2>
+            Ich habe zwei R-Pakete auf CRAN veröffentlicht:
+            <ul>
+                <li>
+                    <a
+                        href="https://teebusch.github.io/noah/"
+                        target="_blank"
+                        rel="noopener noreferrer">noah</a
+                    >: Create Unique Pseudonymous Animal Names
+                </li>
+                <li>
+                    <a
+                        href="https://teebusch.github.io/mifa/"
+                        target="_blank"
+                        rel="noopener noreferrer">mifa</a
+                    >: Multiple Imputation for Exploratory Factor Analysis
+                </li>
+            </ul>
+            Ausserdem habe ich mitgearbeitet an <a
+                href="https://github.com/patrickreidy/textgRid"
+                target="_blank"
+                rel="noopener noreferrer">textgRid</a
+            >
+            and <a
+                href="https://github.com/HomeBankCode/rlena"
+                target="_blank"
+                rel="noopener noreferrer">rlena.</a
+            >
+        </section>
+    </Center>
+</BaseLayout>
+
+<style>
+    .about-text {
+        p:not(:first-child) {
+            text-indent: var(--space-400);
+        }
+    }
+</style>

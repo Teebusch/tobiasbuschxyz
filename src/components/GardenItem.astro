@@ -1,0 +1,49 @@
+---
+import DateSummary from './DateSummary.astro';
+
+const { title, series, description, url, datePublished, dateModified, tags, external } =
+    Astro.props;
+const fullTitle = series ? `${series}: ${title}` : title;
+---
+
+<article class={external && 'link-external'}>
+    <h4><a href={url}>{fullTitle}</a></h4>
+    <div>{description}</div>
+    <DateSummary datePublished={datePublished} dateModified={dateModified} />
+    <ul class="tag-pills">
+        {tags && tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+</article>
+
+<style>
+    article {
+        margin-bottom: var(--space-400);
+    }
+
+    h3 {
+        margin-bottom: var(--space-50);
+    }
+
+    time {
+        font-size: var(--font-size--1);
+        color: var(--color-text-secondary);
+    }
+
+    article.link-external h3::after {
+        content: ' ⤴';
+    }
+
+    .tag-pills {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-100);
+        font-size: var(--font-size--2);
+
+        li {
+            color: var(--color-text-secondary);
+        }
+    }
+</style>

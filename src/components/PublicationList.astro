@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+
+const publications = await getCollection('publications');
+---
+
+<section class="publication-list">
+    <ul>
+        {
+            publications.map((pub) => (
+                <li>
+                    <h4>
+                        <a href={pub.data.url} target="_blank" rel="noopener noreferrer">
+                            {pub.data.title} ({pub.data.year})
+                        </a>
+                    </h4>
+                    {pub.data.authors}
+                    {pub.data.journal}
+                    <div class="action-bar">
+                        {pub.data.open_access === true ? (
+                            <span>(open access)</span>
+                        ) : (
+                            <span>
+                                (Closed access,
+                                <a href="mailto:hello@tobiasbusch.xyz" target="_blank">
+                                    ✉ Request author copy)
+                                </a>
+                            </span>
+                        )}
+                    </div>
+                </li>
+            ))
+        }
+        <li class="peer-reviews">
+            <small>
+                Ich habe ausserdem Manuskripte peer-reviewed für Ear and Hearing, Cochlear Implants
+                International, International Journal of Audiology, Journal of Child Language,
+                Frontiers in Psychology, Collabra: Psychology, und Human Arenas. <a
+                    href="https://publons.com/researcher/4522734/tobias-busch"
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    >Siehe Publons
+                </a>
+                für eine unvollständige Liste.
+            </small>
+        </li>
+    </ul>
+</section>
+
+<style>
+    section.publication-list {
+        column-count: 1;
+        column-gap: var(--space-600);
+        margin: var(--space-400) 0;
+    }
+    @media (min-width: 800px) {
+        section.publication-list {
+            column-count: 2;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: var(--space-400);
+        break-inside: avoid;
+    }
+    .peer-reviews {
+        color: var(--color-text-secondary);
+    }
+</style>

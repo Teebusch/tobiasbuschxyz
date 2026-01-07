@@ -1,0 +1,41 @@
+---
+const { datePublished, dateModified } = Astro.props;
+
+const wasPublished = datePublished;
+const wasModified = dateModified && (dateModified > datePublished);
+const datePublishedObj = wasPublished ? new Date(datePublished) : null;
+const dateModifiedObj = wasModified ? new Date(dateModified) : null;
+
+const formatDate = (date) => {
+	return date.toLocaleDateString("de-DE", {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	});
+};
+---
+
+<div class="date-summary">
+    { wasPublished &&
+    <span>Veröffentlicht</span>
+    <time datetime={datePublishedObj?.toISOString()}>
+        {formatDate(datePublishedObj)}{ wasModified && ", " }
+    </time>
+    }
+    { wasModified &&
+    <span>Bearbeitet</span>
+    <time datetime={dateModifiedObj?.toISOString()}>
+        {formatDate(dateModifiedObj)}
+    </time>
+    }
+</div>
+
+<style>
+	.date-summary {
+		font-size: var(--font-size--1);
+		font-weight: 500;
+		color: var(--color-text-secondary);
+		display: block;
+		margin-bottom: var(--space-50);
+	}
+</style>

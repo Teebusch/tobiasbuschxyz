@@ -1,0 +1,142 @@
+[
+	{
+		"id": "2025-language-interventions-dhh-children",
+		"category": "Peer-reviewed Publications",
+		"authors": [
+			"Jønsberg, A. C.",
+			"Hovland, T.",
+			"Busch, T.",
+			"Wie, O. B.",
+			"von Koss Torkildsen, J."
+		],
+		"year": 2025,
+		"title": "Language Interventions for School-Aged Children Who Are d/Deaf and Hard of Hearing: A Systematic Review and Meta-Analysis",
+		"journal": "Journal of Speech, Language, and Hearing Research",
+		"doi": "10.1044/2025_JSLHR-24-00456",
+		"url": "https://doi.org/10.1044/2025_JSLHR-24-00456",
+		"open_access": true,
+		"abstract_en": "A systematic review and meta-analysis to evaluate the effectiveness of language interventions for school-aged children who are d/Deaf and hard of hearing (DHH).",
+		"abstract_de": "Ein systematisches Review und eine Metaanalyse von Sprachinterventionen von Schulkindern mit Schwerhörigkeit oder Gehörlosigkeit."
+	},
+	{
+		"id": "2022-receptive-vocabulary-children-bilateral-cochlear-implants",
+		"category": "Peer-reviewed Publications",
+		"authors": ["Busch, T.", "Brinchmann, E. l.", "Braeken, J.", "Wie, O. B."],
+		"year": 2022,
+		"title": "Receptive Vocabulary of Children with Bilateral Cochlear Implants from 3 to 16 Years of Age",
+		"journal": "Ear and Hearing",
+		"doi": "10.1097/AUD.0000000000001220",
+		"url": "https://dx.doi.org/10.1097/AUD.0000000000001220",
+		"open_access": true,
+		"abstract_en": "This study explores the vocabulary performance of children with CI across a wide age range (3 to 16 years of age). It shows a particularly large difference between children with CI and children with typical hearing around the time that they enter primary school.",
+		"abstract_de": "Diese Studie untersuchte die Entwicklung des Vokabulars von Kindern mit Cochleaimplantat über eine lange Zeitspanne (3-16 Jahre). Die Ergebnisse zeigen einen besonders großen Unterschied zu normalhörenden Kindern rund um die Zeit des Schuleintritts."
+	},
+	{
+		"id": "2020-long-term-language-development-children-bilateral-cochlear-implants",
+		"category": "Peer-reviewed Publications",
+		"authors": [
+			"Wie, O. B.",
+			"von Koss Torkildsen, J.",
+			"Schauber, S.",
+			"Busch, T.",
+			"Litovsky, R."
+		],
+		"year": 2020,
+		"title": "Long-term language development in children with early simultaneous bilateral cochlear implants",
+		"journal": "Ear and Hearing, 41 (5):1294-1305",
+		"doi": "10.1097/AUD.0000000000000851",
+		"url": "https://doi.org/10.1097/AUD.0000000000000851",
+		"open_access": true,
+		"abstract_en": "A longitudinal study of the early language development (until 6 years of age) of children who received early bilateral CIs and have no additional deficits. Despite the good starting conditions for language development that these children have, they did appear to fall behind their typical hearing peers towards the end of the age range. A follow-up study is currently in the making. I have contributed to the interpretation of the data and the writing of the manuscript.",
+		"abstract_de": "In dieser Längsschnittstudie untersuchten wir die frühe Sprachentwicklung (bis 6 Jahre) von Kindern mit früh implantierten CIs und ohne zusätzliche Einschränkungen. Trotz guter Startbedingungen fielen die Kinder gegen Ende des Untersuchungszeitraums hinter normalhörende Kinder zurück. Eine Folgestudie ist in Arbeit. Ich habe zur Auswertung und Interpretation der Daten beigetragen, sowie zum Schreiben des Manuskripts."
+	},
+	{
+		"id": "2019-ci-data-logs-predict-children-receptive-vocabulary",
+		"category": "Peer-reviewed Publications",
+		"authors": [
+			"Busch, T.",
+			"Vermeulen, A.",
+			"Langereis, M.",
+			"Vanpoucke, F.",
+			"van Wieringen, A."
+		],
+		"year": 2019,
+		"title": "CI Data Logs Predict Children’s Receptive Vocabulary",
+		"journal": "Ear and Hearing, 41(4):733-746",
+		"doi": "10.1097/AUD.0000000000000818",
+		"url": "https://doi.org/10.1097/AUD.0000000000000818",
+		"open_access": false,
+		"abstract_en": "This study explores whether automatically information about children’s CI use and auditory environment that is collected automatically via CI data logging can predict their language performance. CI use and – surprisingly – exposure to music but not speech emerged as good predictors. Implications for the future development of CI data logging are discussed.",
+		"abstract_de": "In diese Studie untersuchten wir, ob die akustische Umgebung und das CI-Nutzungsverhalten, die durch Data Logging automatisch erfasst werden, die sprachlichen Fähigkeiten von Kindern mit CI vorhersagen kann. Überraschenderweise stellte sich Musik aber nicht Sprache in der Umgebung als guter Prädiktor heraus. Implikationen für die Weiterentwicklung des Data Logging Algorithmus werden diskutiert."
+	},
+	{
+		"id": "2018-lena-dutch-natural-language-recordings",
+		"category": "Peer-reviewed Publications",
+		"authors": [
+			"Busch, T.",
+			"Sangen, A.",
+			"Vanpoucke, F.",
+			"van Wieringen, A."
+		],
+		"year": 2018,
+		"title": "Correlation and agreement between Language ENvironment Analysis (LENA™) and manual transcription for Dutch natural language recordings",
+		"journal": "Behavior Research Methods, 50(5):1921-1932",
+		"doi": "10.3758/s13428-017-0960-0",
+		"url": "https://doi.org/10.3758/s13428-017-0960-0",
+		"open_access": true,
+		"abstract_en": "The LENA device, a “speech pedometer”, has revolutionized language development research. In this study, we investigate whether it can be used for the Dutch language. Our results demonstrate some of the limitations of LENA’s measurements.",
+		"abstract_de": "LENA, ein “Schrittzähler für Sprache”, hat die Spracherwerbsforschung revolutioniert. In dieser Studie untersuchten wir, ob LENA auch für die Niederländische Sprache geeignet ist. Unsere Ergebnisse demonstrieren die Grenzen von LENAs Messungen."
+	},
+	{
+		"id": "2017-auditory-environment-cochlear-implant-users",
+		"category": "Peer-reviewed Publications",
+		"authors": ["Busch, T.", "Vanpoucke, F.", "van Wieringen, A."],
+		"year": 2017,
+		"title": "Auditory Environment across the Life Span of Cochlear Implant Users: Insights from Data Logging",
+		"journal": "Journal of Speech, Language and Hearing Research, 60(5): 1362-1377",
+		"doi": "10.1044/2016_JSLHR-H-16-0162",
+		"url": "https://doi.org/10.1044/2016_JSLHR-H-16-0162",
+		"open_access": true,
+		"abstract_en": "In this study, we explore a large sample of CI data logs from around the world to show age-related trends in the auditory environment of people with CIs.",
+		"abstract_de": "In dieser Studie untersuchten wir eine große Stichprobe von CI Data Logs aus vielen verschiedenen Ländern und fanden altersabhöngige Trends in der akustischen Umgebung von Menschen mit CI."
+	},
+	{
+		"id": "2016-statistical-mmn-auditory-sequences",
+		"category": "Peer-reviewed Publications",
+		"authors": ["Koelsch, S.", "Busch, T.", "Jentschke, S.", "Rohrmeier, M."],
+		"year": 2016,
+		"title": "Under the hood of statistical learning: A statistical MMN reflects the magnitude of transitional probabilities in auditory sequences",
+		"journal": "Scientific Reports, 6, 19741",
+		"doi": "10.1038/srep19741",
+		"url": "https://doi.org/10.1038/srep19741",
+		"open_access": true,
+		"abstract_en": "This publication grew out of my master thesis, where we conducted an EEG experiment that demonstrated implicit learning of transitional probabilities in auditory sequences. This ability is believed to be fundamental to language acquisition as well as the enjoyment of music. The “statistical MMN” that we found had not been shown before. I contributed substantially to the experimental design, data collection, data analysis, and writing.",
+		"abstract_de": "Dieser Artikel basiert auf meiner Masterarbeit, für die wir eine EEG-Experiment durchgeführt haben, das implizites Lernen von Übergangswahrscheinlichkeiten in akustischen Sequenzen demonstriert. Es wird angenommen, dass diese Fähigkeit fundamental für den Spracherwerb, aber auch für den Genuss von Musik ist. Die „statistische MMN“ die wir gefunden haben wurde zuvor nie nachgewiesen. Ich habe substanziell beigetragen zum Design des Experiments, der Datenerhebung, Datenanalyse, und dem Schreiben des Manuskripts."
+	},
+	{
+		"id": "2012-errorless-learning-aphasia-therapy",
+		"category": "Peer-reviewed Publications",
+		"authors": ["Busch, T.", "Heide, J."],
+		"year": 2012,
+		"title": "Fehlerfreies Lernen als Methode in der Aphasietherapie [Errorless learning in Aphasia Therapy]",
+		"journal": "Die Sprachheilarbeit, 57(2), 79-88",
+		"doi": null,
+		"url": "https://www.praxis-sprache.eu/heftarchiv/57-jahrgang-2012/heft-22012/",
+		"open_access": true,
+		"abstract_en": "For my bachelor thesis, I explored the use of a learning regime called “errorless learning” in speech and language therapy. This technique may have some advantages for patients with certain neurological disorders. An article based on the thesis was published in a German professional journal for SLPs.",
+		"abstract_de": "Dieser Artikel basiert auf meiner Bachelorarbeit. Für diese habe ich eine Lerntechnik namens „fehlerfreies Lernen“ auf seine Anwendbarkeit in der Sprachtherapie hin untersucht. Diese Technik könnte für Menschen mit bestimmten neurologischen Erkrankungen vorteilhaft sein."
+	},
+	{
+		"id": "2019-doctoral-thesis-auditory-environment-children-cochlear-implants",
+		"category": "Doctoral Thesis",
+		"authors": ["Busch, T."],
+		"year": 2019,
+		"title": "Using Data Logs to Capture the Auditory Environment of Children with Cochlear Implants",
+		"journal": "Dissertation, KU Leuven, Leuven, Belgium",
+		"doi": null,
+		"url": "https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS2782435&vid=Lirias",
+		"open_access": true,
+		"abstract_en": "My dissertation explores potential applications of CI data logging and similar technologies in the rehabilitation of people with CIs. It comprises 3 peer-reviewed papers and a general introduction and discussion that connects their findings.",
+		"abstract_de": "In meiner Dissertation untersuchte ich mögliche Anwendungen des CI Data Logging und ähnlicher Technologien in der Rehabilitation von Menschen mit Cochleaimplantaten. Sie besteht aus 3 Fachartikeln sowie einer allgemeinen Einleitung und Diskussion."
+	}
+]

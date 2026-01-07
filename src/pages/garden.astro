@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import CenteredLayout from '../layouts/CenteredLayout.astro';
+import GardenItem from '../components/GardenItem.astro';
+
+const posts = await getCollection('posts');
+---
+
+<CenteredLayout title="Digitaler Garten">
+    <section class="articles">
+        {
+            posts.map(async (post) => {
+                return (
+                    <GardenItem
+                        title={post.data.title}
+                        description={post.data.description}
+                        series={post.data.series}
+                        url={`/posts/${post.id}`}
+                        datePublished={post.data.datePublished}
+                        dateModified={post.data.dateModified}
+                        tags={post.data.tags}
+                    />
+                );
+            })
+        }
+
+        <GardenItem
+            title="Data Visualization with Tableau"
+            description="Some small data visualisations made with Tableau."
+            url="https://public.tableau.com/app/profile/tiobias.busch/vizzes"
+            datePublished="2026-01-06 00:00:00"
+            tags={['Tableau', 'data visualisation']}
+            external={true}
+        />
+
+        <GardenItem
+            title="D3 for the impatient"
+            description="Observable Notebooks written while working through the book 'D3 for the impatient'."
+            url="https://observablehq.com/@teebusch/d3-for-the-impatient"
+            datePublished="2026-01-06 00:00:00"
+            tags={['D3.js', 'data visualisation']}
+            external={true}
+        />
+    </section>
+    <section>
+        <small>
+            Dieser Garten ist ein Ort des Lernens und der Inspiration. Irgendwas zwischen Blog und
+            Notizbuch. Ein wachsender Wald der Dinge. Von Zeit zu Zeit, schaue ich vorbei, pflege
+            ihn ein bisschen oder pflanze etwas Neues.
+        </small>
+    </section>
+</CenteredLayout>
+
+<style>
+    section.articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: auto;
+        column-gap: var(--space-400);
+        row-gap: var(--space-200);
+    }
+</style>
