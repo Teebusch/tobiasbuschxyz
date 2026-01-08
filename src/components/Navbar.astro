@@ -1,21 +1,22 @@
 ---
-import Center from './Center.astro';
+
 ---
 
 <header>
-    <Center>
-        <nav>
-            <a class="logo" href="/">TobiasBusch.xyz</a>
-            <div class="nav-links">
-                <a href="/garden">Garten</a>
-                <a href="/about">Über mich</a>
-            </div>
-        </nav>
-    </Center>
+    <nav>
+        <a class="logo" href="/">TobiasBusch.xyz</a>
+        <div class="nav-links">
+            <a href="/garden">Garten</a>
+            <a href="/about">Über mich</a>
+        </div>
+    </nav>
 </header>
 
 <style>
     header {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 2/3;
         padding-block: var(--space-300);
         position: sticky;
         top: 0;
@@ -29,13 +30,15 @@ import Center from './Center.astro';
     }
     nav {
         display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-200);
         justify-content: space-between;
         font-size: var(--font-size-1);
         font-family: var(--font-family-display);
     }
     .nav-links {
         display: flex;
-        gap: var(--space-400);
+        gap: var(--space-200);
     }
     a {
         color: var(--color-text);
