@@ -33,15 +33,30 @@ const publications = await getCollection('publications');
         }
         <li class="peer-reviews">
             <small>
-                Ich habe ausserdem Manuskripte peer-reviewed für Ear and Hearing, Cochlear Implants
-                International, International Journal of Audiology, Journal of Child Language,
-                Frontiers in Psychology, Collabra: Psychology, und Human Arenas. <a
-                    href="https://publons.com/researcher/4522734/tobias-busch"
-                    target="_blank"
-                    rel="noopener noreferrer me"
-                    >Siehe Publons
-                </a>
-                für eine unvollständige Liste.
+                <p>
+                    Man findet mich auch auf
+                    <a
+                        href="https://www.researchgate.net/profile/Tobias-Busch-4"
+                        target="_blank"
+                        rel="me noopener noreferrer">ResearchGate</a
+                    > und
+                    <a
+                        href="https://orcid.org/0000-0002-8390-7892"
+                        target="orcid.widget"
+                        rel="me noopener noreferrer">ORCID.</a
+                    >
+                </p>
+                <p>
+                    Ich habe ausserdem Manuskripte peer-reviewed für Ear and Hearing, Cochlear
+                    Implants International, International Journal of Audiology, Journal of Child
+                    Language, Frontiers in Psychology, Collabra: Psychology, und Human Arenas. <a
+                        href="https://publons.com/researcher/4522734/tobias-busch"
+                        target="_blank"
+                        rel="noopener noreferrer me"
+                        >Siehe Publons
+                    </a>
+                    für eine unvollständige Liste.
+                </p>
             </small>
         </li>
     </ul>
@@ -68,5 +83,8 @@ const publications = await getCollection('publications');
     }
     .peer-reviews {
         color: var(--color-text-secondary);
+        p {
+            margin-bottom: var(--space-50);
+        }
     }
 </style>

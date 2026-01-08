@@ -1,23 +1,24 @@
 ---
-import Center from './Center.astro';
+
 ---
 
 <footer>
-    <Center>
-        <div class="links">
-            <strong>Socials</strong>
-            <a href="https://github.com/teebusch" target="_blank">Github</a>
-            <a href="https://linkedin.com/in/tobias-busch" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/tobilotti/" target="_blank">Insta</a>
-            <strong>Contact</strong>
-            <a href="mailto:hello@tobiasbusch.xyz" target="_blank">hello@tobiasbusch.xyz</a>
-        </div>
-    </Center>
+    <div class="links">
+        <strong>Socials</strong>
+        <a href="https://github.com/teebusch" target="_blank">Github</a>
+        <a href="https://linkedin.com/in/tobias-busch" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/tobilotti/" target="_blank">Insta</a>
+        <strong>Contact</strong>
+        <a href="mailto:hello@tobiasbusch.xyz" target="_blank">hello@tobiasbusch.xyz</a>
+    </div>
 </footer>
 
 <style>
     footer {
-        padding-top: var(--space-400);
+        padding-block: var(--space-200);
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 2/3;
     }
 
     .links {

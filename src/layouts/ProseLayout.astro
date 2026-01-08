@@ -1,5 +1,5 @@
 ---
-import Center from '../components/Center.astro';
+import DateSummary from '../components/DateSummary.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const { title, description, eyebrow, datePublished, dateModified } = Astro.props;
@@ -12,9 +12,8 @@ const { title, description, eyebrow, datePublished, dateModified } = Astro.props
     datePublished={datePublished}
     dateModified={dateModified}
 >
-    <Center>
-        <article class="prose">
-            <slot />
-        </article>
-    </Center>
+    <DateSummary datePublished={datePublished} dateModified={dateModified} />
+    <article class="prose">
+        <slot />
+    </article>
 </BaseLayout>

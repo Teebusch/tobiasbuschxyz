@@ -1,10 +1,10 @@
 ---
 import Intro from '../components/Intro/Intro.astro';
-import CenteredLayout from '../layouts/CenteredLayout.astro';
 import Now from '../components/Now.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<CenteredLayout title="Tobias Busch">
+<BaseLayout title="Tobias Busch">
     <Intro />
     <section>
         <h3>Derzeit</h3>
@@ -17,4 +17,4 @@ import Now from '../components/Now.astro';
             >
         </small>
     </section>
-</CenteredLayout>
+</BaseLayout>
