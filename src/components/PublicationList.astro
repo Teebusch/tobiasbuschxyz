@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 const publications = await getCollection('publications');
 ---
 
-<section class="publication-list">
+<div class="publication-list">
     <ul>
         {
             publications.map((pub) => (
@@ -60,13 +60,12 @@ const publications = await getCollection('publications');
             </small>
         </li>
     </ul>
-</section>
+</div>
 
 <style>
-    section.publication-list {
+    .publication-list {
         column-count: 1;
         column-gap: var(--space-600);
-        margin: var(--space-400) 0;
     }
     @media (min-width: 800px) {
         section.publication-list {
@@ -76,6 +75,7 @@ const publications = await getCollection('publications');
     ul {
         list-style: none;
         padding: 0;
+        margin-block: var(--space-200);
     }
     li {
         margin-bottom: var(--space-400);
@@ -83,6 +83,7 @@ const publications = await getCollection('publications');
     }
     .peer-reviews {
         color: var(--color-text-secondary);
+        margin-bottom: 0;
         p {
             margin-bottom: var(--space-50);
         }

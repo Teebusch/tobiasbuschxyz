@@ -20,7 +20,7 @@ import PageHeader from '../components/PageHeader.astro';
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <ClientRouter />
-        <title>tobiasbusch.xyz - {title}</title>
+        <title>{title} - tobiasbusch.xyz</title>
     </head>
     <body>
         <div class="content-wrapper">
@@ -41,7 +41,7 @@ import PageHeader from '../components/PageHeader.astro';
         grid-template-columns: 1fr min(var(--breakpoint-lg), 100%) 1fr;
         grid-template-rows: auto auto 1fr auto;
         min-height: 100dvh;
-        padding-inline: var(--space-400);
+        padding-inline: var(--space-300);
     }
 
     main {
